@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (혹시 사용 시)
+node_modules/
+.npm
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+.cache/

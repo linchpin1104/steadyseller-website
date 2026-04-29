@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Work — 함께 만들어온 브랜드들 | Steadyseller</title>
+<meta name="description" content="시니어, 가족, 호스피탈리티, F&B 카테고리에서 스테디셀러가 함께 만들어온 브랜드 작업들. 결은 비슷하지만 카테고리는 모두 다릅니다." />
+<meta name="keywords" content="스테디셀러, Work, 포트폴리오, 시니어 브랜딩, 가족 브랜드, 호스피탈리티, F&B 브랜딩 사례" />
+<link rel="canonical" href="https://steadyseller.kr/work.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Work — 함께 만들어온 브랜드들" />
+<meta property="og:description" content="결은 비슷하지만 카테고리는 모두 다릅니다." />
+<meta property="og:url" content="https://steadyseller.kr/work.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "Work"}
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "Work",
+      "description": "함께 만들어온 브랜드들. 시니어, 가족, 호스피탈리티, F&B 카테고리의 케이스 스터디.",
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  .filters {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .filter {
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+    padding: 0.55rem 1.2rem;
+    font-family: var(--f-sans);
+    font-size: 0.88rem;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.3s var(--ease);
+  }
+  .filter:hover { border-color: var(--ink); color: var(--ink); }
+  .filter.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .filter .count {
+    margin-left: 0.4rem;
+    color: var(--ink-3);
+    font-family: var(--f-en);
+    font-style: italic;
+    font-size: 0.85em;
+  }
+  .filter.active .count { color: var(--ink-4); }
+
+  .work-grid {
+    padding: clamp(3rem, 5vw, 4rem) 0 clamp(5rem, 9vw, 7rem);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(3rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+  }
+  .work-item {
+    display: block;
+    transition: opacity 0.4s var(--ease);
+  }
+  .work-item:hover { opacity: 0.92; }
+  .work-item .viz {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 1.4rem;
+  }
+  .work-item .meta {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .work-item h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+    line-height: 1.25;
+    letter-spacing: -0.022em;
+    margin-bottom: 0.6rem;
+  }
+  .work-item h3 .en {
+    color: var(--ink-3);
+    font-size: 0.7em;
+    margin-left: 0.4rem;
+  }
+  .work-item .desc {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+    max-width: 38ch;
+  }
+  .work-item .scope {
+    color: var(--ink-3);
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+  }
+
+  .empty-row {
+    grid-column: 1 / -1;
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--ink-3);
+    border: 1px dashed var(--line);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 760px) {
+    .work-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html">About</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <header class="page-head">
+    <div class="col-wide">
+      <span class="label crumb">— Work / Index</span>
+      <h1 class="t-display">함께 만들어온 브랜드들.</h1>
+      <p class="lede">카테고리는 다르지만 결은 비슷합니다. 시간이 흐르며 신뢰가 누적되는 카테고리에서 작업이 많습니다.</p>
+    </div>
+  </header>
+
+  <div class="col-wide">
+    <div class="filters" role="tablist" aria-label="Project filters">
+      <button class="filter active" data-cat="all">All <span class="count">08</span></button>
+      <button class="filter" data-cat="senior">Senior <span class="count">04</span></button>
+      <button class="filter" data-cat="family">Family <span class="count">02</span></button>
+      <button class="filter" data-cat="hospitality">Hospitality <span class="count">02</span></button>
+      <button class="filter" data-cat="fnb">F&amp;B / Retail <span class="count">02</span></button>
+    </div>
+
+    <section class="work-grid" id="workGrid">
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="senior family">
+        <div class="viz semonyeo viz-hover"></div>
+        <div class="meta"><span>Senior · Family</span><span>·</span><span>2025</span></div>
+        <h3>세모녀 <span class="en">Semonyeo</span></h3>
+        <p class="desc">자녀가 부모님께 건네는 식탁.</p>
+        <div class="scope">BI · Package · Retail · Product</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="hospitality">
+        <div class="viz haru viz-hover"></div>
+        <div class="meta"><span>Hospitality</span><span>·</span><span>2024</span></div>
+        <h3>하루의 머무름 <span class="en">A Stayed Day</span></h3>
+        <p class="desc">머무는 시간을 설계하는 일.</p>
+        <div class="scope">BI · Space · Amenity</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="family">
+        <div class="viz gyul viz-hover"></div>
+        <div class="meta"><span>Family · Care</span><span>·</span><span>2024</span></div>
+        <h3>아이의 결 <span class="en">Soft Grain</span></h3>
+        <p class="desc">부모와 아이의 시간을 다듬는 일.</p>
+        <div class="scope">BI · Package · Digital</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="fnb">
+        <div class="viz janjan viz-hover"></div>
+        <div class="meta"><span>F&amp;B · Retail</span><span>·</span><span>2023</span></div>
+        <h3>잔잔한 식 <span class="en">Calm Table</span></h3>
+        <p class="desc">매일의 식탁을 위한 작은 단정함.</p>
+        <div class="scope">BI · Package · VMD</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="senior hospitality">
+        <div class="viz silver viz-hover"></div>
+        <div class="meta"><span>Senior · Hospitality</span><span>·</span><span>2023</span></div>
+        <h3>은빛 라운지 <span class="en">Silver Lounge</span></h3>
+        <p class="desc">시니어 레지던스의 첫 인상을 다듬는 일.</p>
+        <div class="scope">BI · Interior · Signage</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="senior">
+        <div class="viz eumi viz-hover"></div>
+        <div class="meta"><span>Senior · Lifestyle</span><span>·</span><span>2023</span></div>
+        <h3>음미 <span class="en">Eumi</span></h3>
+        <p class="desc">시니어의 일상에 자연스럽게 놓이는 라이프스타일 라인.</p>
+        <div class="scope">BI · Package · Product</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="hospitality">
+        <div class="viz maru viz-hover"></div>
+        <div class="meta"><span>Hospitality</span><span>·</span><span>2022</span></div>
+        <h3>마루 호텔 <span class="en">Maru Hotel</span></h3>
+        <p class="desc">머무름과 식의 결을 동시에 잡는 호스피탈리티.</p>
+        <div class="scope">BI · Space · F&amp;B</div>
+      </a>
+
+      <a href="work-semonyeo.html" class="work-item" data-cat="senior fnb">
+        <div class="viz bonet viz-hover"></div>
+        <div class="meta"><span>Senior · F&amp;B</span><span>·</span><span>2022</span></div>
+        <h3>본넷 <span class="en">Bonnet</span></h3>
+        <p class="desc">시니어 친화 푸드 라인의 양산형 패키지 시스템.</p>
+        <div class="scope">Package · Retail · OEM</div>
+      </a>
+
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+
+  const filters = document.querySelectorAll('.filter');
+  const items = document.querySelectorAll('.work-item');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat.includes(cat)) item.style.display = 'block';
+        else item.style.display = 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

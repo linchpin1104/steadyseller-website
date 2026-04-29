@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Contact — 새 프로젝트를 시작하시려면 | Steadyseller</title>
+<meta name="description" content="첫 미팅은 무료입니다. 30~60분, 우리가 카테고리를 어떻게 보고 있는지, 함께 갈 수 있는 결인지 빠르게 확인하는 자리입니다." />
+<meta name="keywords" content="스테디셀러, Contact, 프로젝트 문의, 브랜딩 의뢰, hello@steadyseller.kr" />
+<link rel="canonical" href="https://steadyseller.kr/contact.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Contact — 새 프로젝트를 시작하시려면" />
+<meta property="og:description" content="첫 미팅은 무료입니다. 1~2영업일 안에 회신드립니다." />
+<meta property="og:url" content="https://steadyseller.kr/contact.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact"}
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "name": "프로젝트 문의",
+      "description": "새 프로젝트를 시작하시려면, 짧게 메일 주세요. 첫 미팅은 무료입니다.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Steadyseller",
+        "email": "hello@steadyseller.kr",
+        "address": {"@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR"}
+      },
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  .contact-grid {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(5rem, 9vw, 7rem);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+  .info-side { position: sticky; top: calc(var(--nav-h) + 2rem); align-self: start; }
+  .info-side .lead {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+    max-width: 24ch;
+  }
+  .info-item { margin-bottom: 2rem; }
+  .info-item h4 {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  .info-item p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+  }
+  .info-item a {
+    color: inherit;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem 1.4rem;
+  }
+  .field { display: flex; flex-direction: column; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+  .field label .req { color: var(--accent); margin-left: 0.2rem; }
+  .field input,
+  .field select,
+  .field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 0;
+    font-family: var(--f-sans);
+    font-size: 1rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.3s var(--ease);
+    border-radius: 0;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--ink); }
+  .field textarea { resize: vertical; min-height: 120px; line-height: 1.7; }
+  .field select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3e%3cpath fill='none' stroke='%236b6759' stroke-width='1.4' d='M1 1l5 5 5-5'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    padding-right: 1.6rem;
+    cursor: pointer;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .check-pill {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .check-pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .check-pill span {
+    display: inline-block;
+    padding: 0.5rem 1.05rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.86rem;
+    color: var(--ink-2);
+    transition: all 0.3s var(--ease);
+  }
+  .check-pill input:checked + span {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  .submit-row {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .form-note {
+    color: var(--ink-3);
+    font-size: 0.84rem;
+    font-style: italic;
+  }
+
+  .closing-line {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .closing-line p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 36ch;
+    margin: 0 auto;
+    letter-spacing: -0.018em;
+  }
+
+  @media (max-width: 880px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .info-side { position: static; }
+    form { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="contact.html" class="cta active">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <header class="page-head">
+    <div class="col-wide">
+      <span class="label crumb">— Contact</span>
+      <h1 class="t-display">새 프로젝트를 시작하시려면, 짧게 메일 주세요.</h1>
+      <p class="lede">첫 미팅은 무료입니다. 30~60분, 우리가 카테고리를 어떻게 보고 있는지, 함께 갈 수 있는 결인지 빠르게 확인하는 자리입니다. 메일로 아래 항목만 적어 보내주시면 1~2영업일 안에 회신드립니다.</p>
+    </div>
+  </header>
+
+  <div class="col-wide">
+    <div class="contact-grid">
+      <aside class="info-side">
+        <p class="lead">짧은 메일로 충분합니다. 폼이 부담스러우시다면 직접 메일도 환영합니다.</p>
+        <div class="info-item"><h4>Email</h4><p><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></p></div>
+        <div class="info-item"><h4>Phone</h4><p>+82 (0)2 · 0000 · 0000</p></div>
+        <div class="info-item"><h4>Studio</h4><p>Seoul, Korea</p></div>
+        <div class="info-item"><h4>Hours</h4><p>월—금<br/>10:00—19:00 KST</p></div>
+      </aside>
+
+      <form onsubmit="event.preventDefault(); alert('문의가 접수되었습니다.\n1~2영업일 안에 회신드립니다.');">
+        <div class="field">
+          <label>이름 / 직책 <span class="req">*</span></label>
+          <input type="text" name="name" required placeholder="홍길동 / 브랜드 매니저">
+        </div>
+        <div class="field">
+          <label>회사 / 브랜드 <span class="req">*</span></label>
+          <input type="text" name="company" required>
+        </div>
+        <div class="field">
+          <label>이메일 <span class="req">*</span></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>전화번호</label>
+          <input type="text" name="phone" placeholder="선택">
+        </div>
+
+        <div class="field">
+          <label>카테고리 <span class="req">*</span></label>
+          <select name="category" required>
+            <option value="">선택하세요</option>
+            <option>식품</option>
+            <option>호스피탈리티</option>
+            <option>시니어</option>
+            <option>가족·돌봄</option>
+            <option>F&amp;B·리테일</option>
+            <option>기타</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>현재 단계 <span class="req">*</span></label>
+          <select name="stage" required>
+            <option value="">선택하세요</option>
+            <option>신규 브랜드</option>
+            <option>기존 브랜드 리뉴얼</option>
+            <option>신제품 라인</option>
+            <option>팝업·이벤트</option>
+            <option>미정</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>의뢰 범위 <span class="req">*</span> <span style="color:var(--ink-4); letter-spacing: 0;text-transform:none;font-weight:400;">— 다중 선택</span></label>
+          <div class="checkbox-group">
+            <label class="check-pill"><input type="checkbox" name="scope" value="strategy"><span>Brand Strategy &amp; Identity</span></label>
+            <label class="check-pill"><input type="checkbox" name="scope" value="application"><span>Brand Application</span></label>
+            <label class="check-pill"><input type="checkbox" name="scope" value="retail"><span>Space &amp; Retail</span></label>
+            <label class="check-pill"><input type="checkbox" name="scope" value="interiors"><span>Space &amp; Interiors</span></label>
+            <label class="check-pill"><input type="checkbox" name="scope" value="product"><span>Product Development</span></label>
+            <label class="check-pill"><input type="checkbox" name="scope" value="undecided"><span>미정</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>희망 시작 시점</label>
+          <input type="text" name="start" placeholder="예: 2026년 6월 / 협의">
+        </div>
+        <div class="field">
+          <label>예상 예산</label>
+          <select name="budget">
+            <option value="">선택 (권장)</option>
+            <option>1천만 미만</option>
+            <option>1~3천만</option>
+            <option>3천~1억</option>
+            <option>1억 이상</option>
+            <option>미정</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>간단한 배경 <span style="color:var(--ink-4); letter-spacing: 0;text-transform:none;font-weight:400;">— 500자 이내</span></label>
+          <textarea name="background" maxlength="500" placeholder="브랜드의 현재 상황, 풀고 싶은 문제, 함께 가고 싶은 결 — 자유롭게 적어주세요."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <span class="form-note">* 표시는 필수 항목입니다.</span>
+          <button type="submit" class="btn">문의 보내기 <span class="arrow">→</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="closing-line">
+    <div class="col">
+      <p>우리는 한 브랜드와 길게 가는 작업을 더 자주 합니다. 첫 미팅에서 카테고리와 호흡을 함께 살핀 뒤, 시작 시점은 함께 조율합니다.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>

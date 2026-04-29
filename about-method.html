@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Method — 우리가 일하는 방식 | Steadyseller</title>
+<meta name="description" content="일을 시작할 때 묻는 네 가지 질문. 진단, 설계, 구현, 운영까지 한 호흡으로 가져가는 스테디셀러의 작업 방식을 정리했습니다." />
+<meta name="keywords" content="스테디셀러, Method, 작업 방식, Jobs-to-be-Done, Category Entry Point, Distinctive Brand Asset, 브랜드 방법론" />
+<link rel="canonical" href="https://steadyseller.kr/about-method.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Method — 우리가 일하는 방식 | Steadyseller" />
+<meta property="og:description" content="일을 시작할 때 묻는 네 가지 질문." />
+<meta property="og:url" content="https://steadyseller.kr/about-method.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "About", "item": "https://steadyseller.kr/about-manifesto.html"},
+        {"@type": "ListItem", "position": 3, "name": "Method"}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "스테디셀러의 브랜드 개발 방법론",
+      "description": "일을 시작할 때 묻는 네 가지 질문",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "누구의 어떤 일을 맡는가", "text": "Jobs-to-be-Done. 표면의 답에서 멈추지 않는 인터뷰로 의뢰의 진짜 정의를 찾습니다."},
+        {"@type": "HowToStep", "position": 2, "name": "그 일이 떠오르는 순간은 언제인가", "text": "Category Entry Point. 한 카테고리에서 점유할 진입 순간 3~5개를 선정합니다."},
+        {"@type": "HowToStep", "position": 3, "name": "그 순간에 무엇으로 기억될 것인가", "text": "Distinctive Brand Asset. 5년 후에도 자리를 지킬 시각 자산을 설계합니다."},
+        {"@type": "HowToStep", "position": 4, "name": "그 기억이 손에 닿을 자리는 어디인가", "text": "Physical Availability. 매대·동선·양산까지 한 호흡으로 가져갑니다."}
+      ],
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  .method-intro {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+  }
+  .method-intro p {
+    font-family: var(--f-sans);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    line-height: 1.8;
+    color: var(--ink-2);
+    max-width: 56ch;
+  }
+
+  .chapter-list { padding-bottom: clamp(4rem, 8vw, 6rem); }
+  .chapter {
+    padding: clamp(4rem, 7vw, 5.5rem) 0;
+    border-top: 1px solid var(--line);
+  }
+  .chapter .ch-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .chapter .ch-meta .num { color: var(--accent); }
+  .chapter h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: clamp(2rem, 3vw, 2.5rem);
+    max-width: 18ch;
+  }
+  .chapter .body p {
+    font-size: clamp(1rem, 1.2vw, 1.05rem);
+    line-height: 1.95;
+    color: var(--ink-2);
+    margin-bottom: 1.6rem;
+  }
+  .chapter .body strong { color: var(--ink); font-weight: 500; }
+  .chapter .deliverables {
+    margin-top: 2.5rem;
+    padding: 1.8rem 2rem;
+    background: var(--bg-2);
+    border-left: 2px solid var(--accent);
+  }
+  .chapter .deliverables h3 {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .chapter .deliverables ul { list-style: none; padding: 0; }
+  .chapter .deliverables li {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+    padding: 0.4rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .chapter .deliverables li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-3);
+  }
+
+  .closing {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .closing p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 40ch;
+    margin: 0 auto;
+    letter-spacing: -0.018em;
+  }
+
+  .next {
+    padding: 3rem 0 clamp(4rem, 7vw, 6rem);
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .next .label { color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html" class="active">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="sub-nav">
+  <div class="inner">
+    <a href="about-manifesto.html">Manifesto</a>
+    <a href="about-method.html" class="active">Method</a>
+    <a href="about-studio.html">Studio</a>
+  </div>
+</div>
+
+<main>
+  <header class="page-head">
+    <div class="col">
+      <span class="label crumb">— About / Method</span>
+      <h1 class="t-display">우리가 일하는 방식.</h1>
+    </div>
+  </header>
+
+  <section class="method-intro">
+    <div class="col">
+      <p>일을 시작할 때 묻는 네 가지 질문이 있습니다. 누구의 어떤 일을 맡는가, 그 일이 떠오르는 순간은 언제인가, 그 순간에 무엇으로 기억될 것인가, 그리고 그 기억이 손에 닿을 자리는 어디인가. 각 질문은 마케팅 사이언스의 검증된 모델 위에 서 있지만, 우리에게는 매 프로젝트마다 차례로 마주하는 네 개의 자리입니다.</p>
+    </div>
+  </section>
+
+  <div class="chapter-list">
+
+    <article class="chapter" id="ch01">
+      <div class="col">
+        <div class="ch-meta">
+          <span class="num">— Ch.01</span>
+          <span>Jobs-to-be-Done</span>
+        </div>
+        <h2>누구의 어떤 일을 맡는가</h2>
+        <div class="body">
+          <p>브랜드의 첫 결정은 시장 분석에서 오지 않습니다. <strong>고객이 자기 인생의 어떤 순간에 우리를 부르는가</strong>라는 질문에서 옵니다. 이 질문은 클레이턴 크리스텐슨의 Jobs-to-be-Done이라고 불립니다.</p>
+          <p>가령 시니어 식품을 사는 자녀가 진짜로 의뢰하는 일은 영양 보충이 아닐 수 있습니다. 자주 가뵙지 못하는 마음을 식탁의 형태로 보내는 일에 가까울 때가 많습니다. 이 정의가 달라지면 카테고리가 달라지고, 경쟁자가 달라지고, 매대 위치까지 달라집니다.</p>
+          <p>이 단계에서 가장 신경 쓰는 것은 표면의 답에서 멈추지 않는 것입니다. 보통 인터뷰를 다섯 번에서 열두 번 정도 진행합니다. 답변의 결을 따라가다 보면, 처음 들었던 답과 다른 단어들이 나오기 시작합니다. 그 단어들이 모이는 자리가 진짜 의뢰입니다.</p>
+        </div>
+        <div class="deliverables">
+          <h3>이 단계의 결과물</h3>
+          <ul>
+            <li>의뢰 정의 (Job Statement)</li>
+            <li>기능적 / 정서적 / 사회적 일의 분리</li>
+            <li>경쟁 셋 재정의</li>
+            <li>1차 포지셔닝 가설</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch02">
+      <div class="col">
+        <div class="ch-meta">
+          <span class="num">— Ch.02</span>
+          <span>Category Entry Point</span>
+        </div>
+        <h2>그 일이 떠오르는 순간은 언제인가</h2>
+        <div class="body">
+          <p>브랜드는 떠오르지 않으면 팔리지 않습니다. 그리고 사람들은 카테고리를 진공 상태에서 떠올리지 않습니다. 어떤 순간이 와야 떠올립니다. 바이런 샤프와 제니 로마니욱은 이 순간을 Category Entry Point라고 부릅니다.</p>
+          <p>가령 "엄마 생신 일주일 전, 늦은 밤"은 시니어 식품의 진입 순간 중 하나입니다. "명절을 못 가게 된 날"도 다른 진입 순간입니다. 한 카테고리에는 보통 다섯에서 열두 개의 진입 순간이 있고, 작은 브랜드일수록 그중 서너 개만 점유하는 편이 좋습니다. 너무 많이 노리면 어디에도 떠오르지 않습니다.</p>
+          <p>이 결정은 영감 자료가 아닙니다. 점유한 진입 순간은 광고 카피, 매대 헤드라인, 검색 키워드, 패키지 후면의 한 줄까지 — 모든 접점의 문법을 결정하는 설계도가 됩니다.</p>
+        </div>
+        <div class="deliverables">
+          <h3>이 단계의 결과물</h3>
+          <ul>
+            <li>진입 순간 맵 (5~12개)</li>
+            <li>우선 점유할 진입 순간 3~5개 선정</li>
+            <li>진입 순간별 메시지 템플릿</li>
+            <li>검색·매대·광고 키워드 시스템</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch03">
+      <div class="col">
+        <div class="ch-meta">
+          <span class="num">— Ch.03</span>
+          <span>Distinctive Brand Asset</span>
+        </div>
+        <h2>그 순간에 무엇으로 기억될 것인가</h2>
+        <div class="body">
+          <p>브랜드는 "다른 점"으로 기억되지 않습니다. "한눈에 알아본다"로 기억됩니다. 이 둘의 차이가 시간이 갈수록 격차를 벌립니다. 제니 로마니욱이 정리한 Distinctive Brand Asset이 다루는 영역입니다.</p>
+          <p>코카콜라의 빨강이나 티파니의 블루는 차별화 논리로 만들어진 것이 아닙니다. 같은 자리를 오래 지켰기 때문에 자산이 된 것입니다. 자산이 된 표식의 조건은 두 가지입니다. 많은 사람이 그 표식을 우리 브랜드와 연결시킬 것 (Fame), 그리고 그 표식이 우리 브랜드만의 것일 것 (Uniqueness).</p>
+          <p>이 단계에서 우리가 가장 먼저 묻는 질문은 "예쁜가"가 아닙니다. <strong>5년 후에도 이 자리를 지킬 수 있는가</strong>입니다. 시즌마다 새로 그리고 싶지 않은 모양, 카테고리 확장이 와도 그대로 유효한 색, 시간이 가도 낡지 않는 활자.</p>
+        </div>
+        <div class="deliverables">
+          <h3>이 단계의 결과물</h3>
+          <ul>
+            <li>로고 시스템 (주·보조·압축)</li>
+            <li>컬러 시스템</li>
+            <li>타이포 시스템</li>
+            <li>일러스트·패턴·픽토그램 자산</li>
+            <li>톤 오브 보이스 가이드</li>
+            <li>브랜드 가이드라인</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch04">
+      <div class="col">
+        <div class="ch-meta">
+          <span class="num">— Ch.04</span>
+          <span>Physical Availability</span>
+        </div>
+        <h2>그 기억이 손에 닿을 자리는 어디인가</h2>
+        <div class="body">
+          <p>마지막 단계는 물리적 가용성입니다. 떠올라도 손이 닿지 않으면 의미가 없습니다.</p>
+          <p>이게 다른 브랜딩 회사와 우리가 다른 자리이기도 합니다. 보통 가이드라인을 만들고 끝나는데, 우리는 패키지의 양산성, 매대의 시야 높이, 백화점 입점 동선, 어메니티의 단가 구조까지 함께 다룹니다. 식품 카테고리에서는 한 단계 더 들어가 제품 자체의 처방과 형태까지 협력 식품사와 같이 결정합니다.</p>
+          <p>세부적으로는 이런 것들을 다룹니다. 매대 위 시선이 가장 먼저 닿는 좌상단 영역, 패키지가 카트에 담길 때의 무게 균형, 검색 결과 페이지에서 썸네일이 잘리는 비율, 어메니티가 손에 잡힐 때의 첫 5초.</p>
+        </div>
+        <div class="deliverables">
+          <h3>이 단계의 결과물</h3>
+          <ul>
+            <li>패키지 양산 디자인</li>
+            <li>매대 VMD 가이드</li>
+            <li>어메니티 / 인쇄물 / 사이니지</li>
+            <li>디지털 자산 (웹·SNS·검색)</li>
+            <li>제품 기획서 (식품 카테고리, 필요 시)</li>
+            <li>론칭 후 시즌별 운영 가이드</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <section class="closing">
+    <div class="col">
+      <p>네 단계를 한 호흡으로 가져가는 것 — 그게 우리가 다른 곳과 다른 점입니다.</p>
+    </div>
+  </section>
+
+  <div class="next col">
+    <span class="label">Next —</span>
+    <a href="about-studio.html" class="link">사람과 자리 <span class="arrow">→</span></a>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>

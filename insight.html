@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Insight — 생각의 결을 기록하는 자리 | Steadyseller</title>
+<meta name="description" content="브랜드를 만드는 동안 모은 생각과 기록. 시니어 카테고리, 패키지·공간 디자인, 작업 방법론에 대한 노트들." />
+<meta name="keywords" content="스테디셀러, Insight, 브랜드 노트, 시니어 마케팅, 패키지 디자인 노트, 공간 브랜딩 사례" />
+<link rel="canonical" href="https://steadyseller.kr/insight.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Insight — 생각의 결을 기록하는 자리" />
+<meta property="og:description" content="브랜드를 만드는 동안 모은 생각과 기록." />
+<meta property="og:url" content="https://steadyseller.kr/insight.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "Insight"}
+      ]
+    },
+    {
+      "@type": "Blog",
+      "name": "Steadyseller Insight",
+      "description": "브랜드를 만드는 동안 모은 생각과 기록.",
+      "publisher": {"@type": "Organization", "name": "Steadyseller", "url": "https://steadyseller.kr"},
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  /* Featured article */
+  .featured-article { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 7vw, 6rem); }
+  .featured-article .head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .featured-article .head .label { display: inline-block; }
+
+  .feat-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ink);
+  }
+  .feat-card .viz { aspect-ratio: 4/3; border-radius: 2px; }
+  .feat-card .meta {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .feat-card .meta .cat { color: var(--accent); }
+  .feat-card h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.2rem;
+    max-width: 22ch;
+  }
+  .feat-card .excerpt {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-2);
+    margin-bottom: 1.8rem;
+    max-width: 38ch;
+  }
+
+  /* Filter pills */
+  .topic-filters {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .topic-pill {
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+    padding: 0.5rem 1.05rem;
+    font-family: var(--f-sans);
+    font-size: 0.86rem;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.3s var(--ease);
+  }
+  .topic-pill:hover { border-color: var(--ink); color: var(--ink); }
+  .topic-pill.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+  /* Article grid */
+  .article-grid {
+    padding: clamp(3rem, 5vw, 4rem) 0 clamp(5rem, 9vw, 7rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(2.5rem, 4vw, 3.5rem) clamp(1.8rem, 3vw, 2.5rem);
+  }
+  .article-card {
+    display: block;
+    transition: opacity 0.4s var(--ease);
+  }
+  .article-card:hover { opacity: 0.92; }
+  .article-card .viz { aspect-ratio: 4/3; margin-bottom: 1.2rem; }
+  .article-card .meta {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+    color: var(--ink-3);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .article-card .meta .cat { color: var(--accent); }
+  .article-card h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    letter-spacing: -0.018em;
+    margin-bottom: 0.6rem;
+    max-width: 24ch;
+  }
+  .article-card .excerpt {
+    color: var(--ink-3);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 32ch;
+  }
+
+  .subscribe {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    background: var(--bg-2);
+    text-align: center;
+  }
+  .subscribe .label { display: inline-block; margin-bottom: 1rem; }
+  .subscribe h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.022em;
+    max-width: 26ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subscribe p {
+    color: var(--ink-3);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    max-width: 36ch;
+    margin: 0 auto 2rem;
+  }
+  .subscribe-form {
+    display: flex;
+    gap: 0.6rem;
+    max-width: 420px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  .subscribe-form input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 0.85rem 1.1rem;
+    font-family: var(--f-sans);
+    font-size: 0.95rem;
+    color: var(--ink);
+    border-radius: 999px;
+    outline: none;
+  }
+  .subscribe-form input:focus { border-color: var(--ink); }
+  .subscribe-form button {
+    padding: 0.85rem 1.4rem;
+    background: var(--ink);
+    color: var(--bg);
+    border: 1px solid var(--ink);
+    font-family: var(--f-sans);
+    font-size: 0.92rem;
+    font-weight: 500;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 880px) {
+    .feat-card { grid-template-columns: 1fr; gap: 1.5rem; }
+    .article-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .subscribe-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insight.html" class="active">Insight</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <header class="page-head">
+    <div class="col-wide">
+      <span class="label crumb">— Insight</span>
+      <h1 class="t-display">생각의 결을 기록하는 자리.</h1>
+      <p class="lede">브랜드를 만드는 동안 모은 작은 노트들. 시니어 카테고리의 디테일, 패키지의 한 줄, 공간의 첫 30초 — 일하면서 마주한 결을 정리해 둡니다.</p>
+    </div>
+  </header>
+
+  <!-- Featured -->
+  <section class="featured-article">
+    <div class="col-wide">
+      <div class="head">
+        <span class="label">— Featured</span>
+      </div>
+      <a href="#" class="feat-card">
+        <div class="viz warm viz-hover"></div>
+        <div class="info">
+          <div class="meta"><span class="cat">Note</span><span>·</span><span>2026.04.20</span></div>
+          <h2>시니어 식품 카테고리에서 자녀와 부모, 두 시선을 한 패키지에 담는 법</h2>
+          <p class="excerpt">구매 결정자(자녀)와 사용자(부모)가 다른 카테고리에서, 한 톤 안에 두 결을 동시에 넣는 방법에 대한 노트. 매대 전면 헤드라인과 후면 카피의 결정 과정을 정리했습니다.</p>
+          <span class="link">읽어보기 <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="col-wide">
+    <div class="topic-filters" role="tablist" aria-label="Topic filters">
+      <button class="topic-pill active" data-topic="all">All</button>
+      <button class="topic-pill" data-topic="senior">Senior</button>
+      <button class="topic-pill" data-topic="method">Method</button>
+      <button class="topic-pill" data-topic="package">Package</button>
+      <button class="topic-pill" data-topic="space">Space</button>
+      <button class="topic-pill" data-topic="field">Field Note</button>
+    </div>
+
+    <section class="article-grid" id="articleGrid">
+
+      <a href="#" class="article-card" data-topic="space senior">
+        <div class="viz silver viz-hover"></div>
+        <div class="meta"><span class="cat">Field</span><span>·</span><span>2026.03.28</span></div>
+        <h3>시니어 친화 공간의 첫 30초가 결정하는 것들</h3>
+        <p class="excerpt">의자에 앉을 때의 안도감과 보통 손님의 자존감 사이. 입실 30초 동안 눈에 닿는 표면들에 대한 메모.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="method">
+        <div class="viz gyul viz-hover"></div>
+        <div class="meta"><span class="cat">Method</span><span>·</span><span>2026.02.14</span></div>
+        <h3>5년 후에도 지킬 컬러란 어떤 색인가</h3>
+        <p class="excerpt">시즌마다 새로 그리고 싶지 않은 자산의 조건. Distinctive Brand Asset의 두 가지 기준을 다시 본 노트.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="package senior">
+        <div class="viz semonyeo-2 viz-hover"></div>
+        <div class="meta"><span class="cat">Package</span><span>·</span><span>2026.01.30</span></div>
+        <h3>매대 좌상단 영역의 1초가 카트에 담길지를 결정합니다</h3>
+        <p class="excerpt">백화점 식품관 매대에서 시선이 가장 먼저 닿는 영역의 디자인 원칙. 카트에 담길 때의 무게 균형까지 살핀 메모.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="senior">
+        <div class="viz eumi viz-hover"></div>
+        <div class="meta"><span class="cat">Senior</span><span>·</span><span>2025.12.18</span></div>
+        <h3>"시니어용"이라는 라벨을 피해야 하는 이유</h3>
+        <p class="excerpt">지금의 시니어가 케어 카테고리의 30년 된 문법을 어떻게 읽어내는지에 대해.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="method">
+        <div class="viz cool viz-hover"></div>
+        <div class="meta"><span class="cat">Method</span><span>·</span><span>2025.11.22</span></div>
+        <h3>인터뷰 5번과 12번 사이, 진짜 의뢰가 모이는 자리</h3>
+        <p class="excerpt">Jobs-to-be-Done에서 표면의 답에서 멈추지 않는 인터뷰 진행에 대한 실무 노트.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="space">
+        <div class="viz maru viz-hover"></div>
+        <div class="meta"><span class="cat">Space</span><span>·</span><span>2025.10.05</span></div>
+        <h3>호텔 객실 입실 30초의 첫인상은 어디서 시작되는가</h3>
+        <p class="excerpt">의자의 높이, 복도의 조명, 화장실의 손잡이 위치 — 공간의 디테일이 BI를 살리거나 죽이는 자리들.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="field">
+        <div class="viz bonet viz-hover"></div>
+        <div class="meta"><span class="cat">Field</span><span>·</span><span>2025.09.12</span></div>
+        <h3>고령친화우수식품 인증 대응에서 우리가 매번 마주하는 것</h3>
+        <p class="excerpt">규제 대응이 디자인 결정과 만나는 자리에서 어떻게 균형을 잡는지.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="package">
+        <div class="viz haru viz-hover"></div>
+        <div class="meta"><span class="cat">Package</span><span>·</span><span>2025.08.20</span></div>
+        <h3>후면 한 줄을 위해 우리가 회의를 다섯 번 한 이유</h3>
+        <p class="excerpt">자녀와 부모, 다른 시선을 같은 패키지에 담을 때 후면이 하는 일.</p>
+      </a>
+
+      <a href="#" class="article-card" data-topic="method">
+        <div class="viz janjan viz-hover"></div>
+        <div class="meta"><span class="cat">Method</span><span>·</span><span>2025.07.08</span></div>
+        <h3>"이 브랜드가 5년 후 어디에 있길 바라는지"라는 첫 질문</h3>
+        <p class="excerpt">새 프로젝트에서 우리가 가장 먼저 묻는 질문에 담긴 의미.</p>
+      </a>
+
+    </section>
+  </div>
+
+  <section class="subscribe">
+    <div class="col">
+      <span class="label">— Newsletter</span>
+      <h2>새 글을 메일로 받아보고 싶으시다면.</h2>
+      <p>한 달에 한두 번, 작업하면서 모은 노트와 새 케이스 스터디를 짧게 정리해서 보내드립니다.</p>
+      <form class="subscribe-form" onsubmit="event.preventDefault(); alert('구독 신청이 접수되었습니다.');">
+        <input type="email" placeholder="이메일 주소" required>
+        <button type="submit">구독하기</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+
+  const pills = document.querySelectorAll('.topic-pill');
+  const articles = document.querySelectorAll('.article-card');
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      pills.forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      const topic = p.dataset.topic;
+      articles.forEach(a => {
+        if (topic === 'all' || a.dataset.topic.includes(topic)) a.style.display = 'block';
+        else a.style.display = 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

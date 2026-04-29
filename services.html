@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Services — 다섯 가지 영역에서 일합니다 | Steadyseller</title>
+<meta name="description" content="Brand Strategy & Identity, Brand Application, Space & Retail, Space & Interiors (Senior), Product Development. 스테디셀러의 다섯 가지 서비스 트랙을 정리했습니다." />
+<meta name="keywords" content="스테디셀러, Services, 브랜드 전략, BI 디자인, 패키지 디자인, 공간 브랜딩, 시니어 인테리어, 제품 개발" />
+<link rel="canonical" href="https://steadyseller.kr/services.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Services — 다섯 가지 영역에서 일합니다" />
+<meta property="og:description" content="대부분의 프로젝트는 두세 가지 트랙이 결합된 형태로 진행됩니다." />
+<meta property="og:url" content="https://steadyseller.kr/services.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "Services"}
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "name": "Steadyseller Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand Strategy & Identity", "description": "브랜드의 이름과 자리, 시각 시스템을 결정하는 일"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand Application", "description": "패키지, 인쇄물, 디지털 자산"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Space & Retail Experience", "description": "매대, 팝업, 쇼룸"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Space & Interiors (Senior)", "description": "시니어 친화 공간 설계"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Product Development", "description": "식품·라이프스타일 제품 기획"}}
+      ],
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  .track {
+    padding: clamp(4rem, 7vw, 5.5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .track:first-child { border-top: 1px solid var(--line); }
+  .track .meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .track .meta .num { color: var(--accent); }
+  .track .meta .badge {
+    background: var(--accent);
+    color: var(--dark-ink);
+    padding: 0.15rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+  .track h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    max-width: 22ch;
+  }
+  .track .one-line {
+    font-family: var(--f-sans);
+    font-weight: 400;
+    font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 38ch;
+  }
+  .track .body p {
+    font-size: clamp(1rem, 1.2vw, 1.05rem);
+    line-height: 1.95;
+    color: var(--ink-2);
+    margin-bottom: 1.6rem;
+  }
+  .track .body strong { color: var(--ink); font-weight: 500; }
+  .track-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2.5rem 0;
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .track-stats .item h4 {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .track-stats .item p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1.02rem;
+    color: var(--ink);
+    line-height: 1.55;
+    letter-spacing: -0.012em;
+  }
+  .deliverables {
+    margin-top: 1.5rem;
+    padding: 1.8rem 2rem;
+    background: var(--bg-2);
+    border-left: 2px solid var(--accent);
+  }
+  .deliverables h3 {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .deliverables ul { list-style: none; padding: 0; }
+  .deliverables li {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+    padding: 0.4rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .deliverables li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-3);
+  }
+
+  .closing-note {
+    padding: clamp(5rem, 8vw, 6rem) 0;
+    background: var(--bg-2);
+  }
+  .closing-note .label { display: inline-block; margin-bottom: 1.4rem; }
+  .closing-note p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--ink-2);
+    margin-bottom: 1.4rem;
+    max-width: 56ch;
+  }
+  .closing-note p.small { color: var(--ink-3); font-style: italic; font-size: 0.96rem; }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <header class="page-head">
+    <div class="col">
+      <span class="label crumb">— Services</span>
+      <h1 class="t-display">다섯 가지 영역에서 일합니다.</h1>
+      <p class="lede">대부분의 프로젝트는 이 중 두세 가지가 결합된 형태로 진행됩니다. 신규 브랜드는 1번에서 시작해 2~3번으로 확장되고, 식품 카테고리에서는 5번이 처음부터 결합되는 경우가 많습니다.</p>
+    </div>
+  </header>
+
+  <article class="track" id="s01">
+    <div class="col">
+      <div class="meta"><span class="num">— S.01</span><span>8 — 14 weeks</span></div>
+      <h2>Brand Strategy &amp; Identity</h2>
+      <p class="one-line">브랜드의 이름과 자리, 시각 시스템을 결정하는 일.</p>
+      <div class="body">
+        <p>브랜드의 가장 오래 가는 결정들이 이 단계에서 만들어집니다. 그래서 가장 길게 들이는 단계이기도 합니다.</p>
+        <p>이 단계에서 우리가 다루는 것은 다음과 같습니다. 시장과 카테고리, 경쟁자를 다시 정의하고, 잠재 고객 인터뷰를 통해 의뢰의 정의를 확정합니다. 그 위에서 네이밍, 포지셔닝, 그리고 시각 시스템을 설계합니다. 마지막으로 모든 결정을 가이드라인으로 정리해서, <strong>이 결정들이 시간이 지나도 흔들리지 않도록</strong> 묶어둡니다.</p>
+      </div>
+      <div class="track-stats">
+        <div class="item"><h4>평균 기간</h4><p>8 — 14주</p></div>
+        <div class="item"><h4>주요 의뢰</h4><p>신규 브랜드 / 기존 리뉴얼 / 시니어·가족 카테고리 진입</p></div>
+      </div>
+      <div class="deliverables">
+        <h3>결과물</h3>
+        <ul>
+          <li>시장·카테고리·경쟁 진단 리포트</li>
+          <li>의뢰 정의 (Job Statement) 및 포지셔닝</li>
+          <li>네이밍 (한국어 / 영문)</li>
+          <li>BI/CI 디자인 (로고, 타이포, 컬러)</li>
+          <li>톤 오브 보이스 가이드</li>
+          <li>브랜드 가이드라인</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="track" id="s02">
+    <div class="col">
+      <div class="meta"><span class="num">— S.02</span><span>4 — 10 weeks</span></div>
+      <h2>Brand Application</h2>
+      <p class="one-line">브랜드의 톤이 손에 닿는 자리에 옮겨지는 단계.</p>
+      <div class="body">
+        <p>가이드라인이 잡히면, 그 톤이 실제로 손에 닿는 매체로 옮겨집니다. 패키지에서 명함까지, 사이트에서 어메니티까지. 표면이 달라도 같은 톤이 유지되도록 다듬는 일입니다.</p>
+        <p>이 단계에서 가장 신경 쓰는 것은 <strong>일관성</strong>입니다. 패키지의 글자 크기와 사이트의 본문 크기, 명함의 종이 결과 어메니티의 손에 잡히는 무게. 매체마다 매체의 문법이 있지만, 그 안에서도 한 톤이 흐트러지지 않도록 합니다.</p>
+      </div>
+      <div class="track-stats">
+        <div class="item"><h4>평균 기간</h4><p>4 — 10주</p></div>
+        <div class="item"><h4>주요 의뢰</h4><p>S.01 후속 / 라인 확장 / 양산 디자인</p></div>
+      </div>
+      <div class="deliverables">
+        <h3>결과물</h3>
+        <ul>
+          <li>패키지 디자인 (양산 가능 데이터까지)</li>
+          <li>인쇄물 (명함, 카탈로그, 리플렛)</li>
+          <li>사이니지·어메니티</li>
+          <li>디지털 자산 (웹사이트, SNS 템플릿)</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="track" id="s03">
+    <div class="col">
+      <div class="meta"><span class="num">— S.03</span><span>6 — 12 weeks</span></div>
+      <h2>Space &amp; Retail Experience</h2>
+      <p class="one-line">매대, 팝업, 쇼룸. 짧은 시간 안에 브랜드가 압축되어 보이는 자리.</p>
+      <div class="body">
+        <p>백화점 팝업의 한 주, 편집숍 매대의 한 분기, 쇼룸의 한 시즌. 짧은 시간 안에 브랜드의 결을 압축해서 보여줘야 하는 자리들입니다.</p>
+        <p>이 단계는 BI 가이드라인만으로는 부족합니다. 진입 동선, 시야의 각도, 머무는 시간, 결제까지의 걸음 수 — <strong>공간의 디테일이 BI의 결을 살리거나 죽입니다.</strong> 우리는 시공·집기 제작 파트너 풀을 가지고 있어, 디자인에서 끝나지 않고 실제 매대가 서는 시점까지 함께 갑니다.</p>
+      </div>
+      <div class="track-stats">
+        <div class="item"><h4>평균 기간</h4><p>6 — 12주</p></div>
+        <div class="item"><h4>주요 의뢰</h4><p>백화점·편집숍 팝업 / 매장 리뉴얼 / 시즌 행사</p></div>
+      </div>
+      <div class="deliverables">
+        <h3>결과물</h3>
+        <ul>
+          <li>백화점·편집숍 팝업 VMD</li>
+          <li>매장·쇼룸 공간 브랜딩</li>
+          <li>매대 시스템 디렉팅</li>
+          <li>행사·론칭 이벤트 디렉팅</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="track" id="s04">
+    <div class="col">
+      <div class="meta"><span class="num">— S.04</span><span class="badge">Senior</span><span>12 — 24 weeks</span></div>
+      <h2>Space &amp; Interiors <span style="color:var(--ink-3);font-size:0.7em;">(Senior)</span></h2>
+      <p class="one-line">시니어가 머무는 공간을 처음부터 함께 설계하는 일.</p>
+      <div class="body">
+        <p>일반적인 공간 브랜딩과 분리해서, 시니어 친화 공간에 특화된 트랙을 별도로 둡니다. 호텔, 시니어 레지던스, 케어 시설, 시니어 라운지 — 시니어가 하루의 대부분을 보내는 공간들입니다.</p>
+        <p>이 자리는 <strong>인테리어와 BI가 분리될 수 없습니다.</strong> 의자의 높이, 복도의 조명, 화장실의 손잡이 위치, 객실 입실 30초 동안 눈에 닿는 표면들 — 공간의 디테일 자체가 브랜드의 첫인상이 됩니다. 우리는 인테리어 시공 파트너와 어메니티 제조사를 한 호흡 안에 묶어, 공간 BI와 인테리어가 같은 결로 완성되도록 합니다.</p>
+      </div>
+      <div class="track-stats">
+        <div class="item"><h4>평균 기간</h4><p>12 — 24주</p></div>
+        <div class="item"><h4>주요 의뢰</h4><p>시니어 레지던스 / 시니어 카테고리 호텔 / 케어 시설 BI 리뉴얼</p></div>
+      </div>
+      <div class="deliverables">
+        <h3>결과물</h3>
+        <ul>
+          <li>시니어 친화 공간 BI 시스템</li>
+          <li>인테리어 콘셉트·재료·조명 가이드</li>
+          <li>사이니지·픽토그램 시스템</li>
+          <li>어메니티·소품 큐레이션</li>
+          <li>직원 유니폼·서비스 디렉팅</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="track" id="s05">
+    <div class="col">
+      <div class="meta"><span class="num">— S.05</span><span>12 — 24 weeks</span></div>
+      <h2>Product Development</h2>
+      <p class="one-line">브랜드가 결국 손에 들리는 무엇이 되어야 한다면, 그 형태와 처방까지.</p>
+      <div class="body">
+        <p>브랜드가 결국 사람의 손에 닿는 한 개의 물건이 되어야 한다면, 그 물건 자체의 형태와 처방까지 함께 다룹니다. <strong>식품 카테고리에서 특히 강한 영역</strong>입니다.</p>
+        <p>대체로 단독 의뢰보다는 1~3번 트랙과 결합되는 형태로 진행됩니다. 신규 식품 브랜드를 만들 때 BI와 함께 처방을 결정하거나, 시니어 라이프스타일 브랜드의 첫 제품을 같이 기획하는 식입니다. 협력 R&amp;D 파트너와 제조사 풀이 있고, 농식품부의 고령친화우수식품 인증 등 규제 대응도 함께 진행합니다.</p>
+      </div>
+      <div class="track-stats">
+        <div class="item"><h4>평균 기간</h4><p>12 — 24주</p></div>
+        <div class="item"><h4>주요 의뢰</h4><p>신규 식품 브랜드 처방 / 시니어 라이프스타일 제품 / OEM·ODM</p></div>
+      </div>
+      <div class="deliverables">
+        <h3>결과물</h3>
+        <ul>
+          <li>카테고리·트렌드 진단 기반 제품 기획</li>
+          <li>식품 처방 협업 (제휴 R&amp;D 파트너)</li>
+          <li>제조 파트너 매칭 및 양산화 컨설팅</li>
+          <li>인증·라벨 규제 대응</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <section class="closing-note">
+    <div class="col">
+      <span class="label">— A few notes</span>
+      <p>대부분의 프로젝트는 두세 가지 트랙이 결합된 형태로 진행됩니다. 신규 브랜드는 1번에서 시작해 2~3번으로 확장되고, 식품 카테고리에서는 5번이 처음부터 결합되는 경우가 많습니다. 시니어 공간 프로젝트는 4번이 단독으로 의뢰되기도 합니다.</p>
+      <p class="small">정확한 견적과 일정은 첫 미팅 후 의뢰 범위가 확정되면 안내드립니다.</p>
+      <a href="contact.html" class="link" style="margin-top:1.5rem;">프로젝트 문의 <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f4ec" />
+
+<title>Studio — 디렉터들이 직접 만듭니다 | Steadyseller</title>
+<meta name="description" content="스테디셀러는 경력 시니어 디렉터들로만 구성된 브랜딩 스튜디오입니다. 단발성 프로젝트보다 장기적인 그림을 그리는 작업에 집중합니다." />
+<meta name="keywords" content="스테디셀러, Studio, 디렉터, 브랜드 전략, BI 디자인, 패키지 디자인, 브랜딩 팀" />
+<link rel="canonical" href="https://steadyseller.kr/about-studio.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="Steadyseller" />
+<meta property="og:title" content="Studio — 디렉터들이 직접 만듭니다" />
+<meta property="og:description" content="경력 시니어 디렉터들로 구성된 팀. 장기적인 그림을 함께 그립니다." />
+<meta property="og:url" content="https://steadyseller.kr/about-studio.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadyseller.kr/"},
+        {"@type": "ListItem", "position": 2, "name": "About", "item": "https://steadyseller.kr/about-manifesto.html"},
+        {"@type": "ListItem", "position": 3, "name": "Studio"}
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "name": "스테디셀러 스튜디오",
+      "description": "디렉터들이 직접 만듭니다. 장기적인 그림을 함께 그립니다.",
+      "inLanguage": "ko-KR"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+
+<style>
+  .studio-body { padding: clamp(4rem, 7vw, 6rem) 0 clamp(4rem, 7vw, 6rem); }
+  .studio-body .lead {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+    letter-spacing: -0.022em;
+    max-width: 24ch;
+  }
+  .studio-body .body p {
+    font-size: clamp(1rem, 1.2vw, 1.05rem);
+    line-height: 1.95;
+    color: var(--ink-2);
+    margin-bottom: 1.6rem;
+  }
+
+  .info-block {
+    margin-top: clamp(3rem, 5vw, 4rem);
+    padding: clamp(2rem, 3vw, 2.5rem);
+    background: var(--bg-2);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .info-block .item h4 {
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+  .info-block .item p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1.02rem;
+    color: var(--ink);
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+  }
+  .info-block .item a { color: inherit; transition: opacity 0.3s var(--ease); }
+  .info-block .item a:hover { opacity: 0.6; }
+
+  .people {
+    padding: clamp(5rem, 9vw, 7rem) 0 clamp(4rem, 7vw, 6rem);
+    border-top: 1px solid var(--line);
+  }
+  .people .head { margin-bottom: clamp(3rem, 5vw, 4rem); }
+  .people .head .label { display: inline-block; margin-bottom: 1rem; }
+  .people h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    max-width: 22ch;
+  }
+  .director-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+  }
+  .director {
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--ink);
+  }
+  .director .role {
+    font-size: 0.74rem;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .director h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.018em;
+  }
+  .director h3 .en {
+    color: var(--ink-3);
+    font-size: 0.8em;
+    margin-left: 0.4rem;
+  }
+  .director p {
+    color: var(--ink-2);
+    font-size: 0.96rem;
+    line-height: 1.75;
+    max-width: 36ch;
+  }
+
+  .closing {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(5rem, 9vw, 7rem);
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .closing p {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 36ch;
+    margin: 0 auto 1.5rem;
+    letter-spacing: -0.018em;
+  }
+
+  @media (max-width: 760px) {
+    .info-block { grid-template-columns: 1fr; gap: 1.4rem; }
+    .director-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Steadyseller home"><span class="dot"></span>Steadyseller</a>
+    <nav aria-label="Main navigation">
+      <ul id="mainMenu">
+        <li><a href="about-manifesto.html" class="active">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="specialty-senior.html">Specialty</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="sub-nav">
+  <div class="inner">
+    <a href="about-manifesto.html">Manifesto</a>
+    <a href="about-method.html">Method</a>
+    <a href="about-studio.html" class="active">Studio</a>
+  </div>
+</div>
+
+<main>
+  <header class="page-head">
+    <div class="col">
+      <span class="label crumb">— About / Studio</span>
+      <h1 class="t-display">디렉터들이 직접 만듭니다.</h1>
+      <p class="lede">장기적인 그림을 함께 그립니다.</p>
+    </div>
+  </header>
+
+  <article class="studio-body">
+    <div class="col">
+      <p class="lead">스테디셀러는 경력 시니어들로만 구성된 팀입니다.</p>
+
+      <div class="body">
+        <p>대기업의 사업과 브랜드를 다뤄온 사람들이 모였습니다. 한 사람이 한 자리에서 십 년 이상 쌓아온 경험들이 한 팀으로 모이면, 그 팀이 바라보는 시간의 단위는 자연스럽게 길어집니다. 분기가 아니라 연, 한 시즌이 아니라 다섯 시즌. 우리가 잘 다루는 작업들이 이 단위에 있습니다.</p>
+        <p>팀은 네 영역의 디렉터로 구성됩니다. 브랜드 전략, BI 디자인, 패키지·공간·VMD, 식품 제품 개발. 각 영역에서 충분한 경력을 가진 사람들입니다. 클라이언트가 만나는 것은 PM이 아니라 디렉터입니다. 작업의 큰 결정을 주니어가 만들지 않고, 디렉터가 처음부터 끝까지 가져갑니다.</p>
+        <p>이 구조 때문에 우리는 단발성 프로젝트보다 장기적인 그림을 그리는 작업에 더 끌립니다. 신규 브랜드의 첫 다섯 해, 기존 브랜드의 다음 십 년. 시간이 자산이 되는 자리에 우리가 함께 있고자 합니다.</p>
+      </div>
+
+      <div class="info-block">
+        <div class="item">
+          <h4>Studio</h4>
+          <p>Steadyseller<br/>Seoul, Korea</p>
+        </div>
+        <div class="item">
+          <h4>Contact</h4>
+          <p><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></p>
+        </div>
+        <div class="item">
+          <h4>Hours</h4>
+          <p>월—금<br/>10:00—19:00 KST</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="people">
+    <div class="col-wide">
+      <div class="head">
+        <span class="label">— People</span>
+        <h2>각 영역의 디렉터가 처음부터 끝까지 가져갑니다.</h2>
+      </div>
+
+      <div class="director-grid">
+        <div class="director">
+          <div class="role">Brand Strategy</div>
+          <h3>D <span class="en">Director, Strategy</span></h3>
+          <p>대기업 식품·라이프스타일 브랜드 전략을 12년간 다룬 시니어. 카테고리 진단과 의뢰 정의, 포지셔닝 설계를 책임집니다.</p>
+        </div>
+        <div class="director">
+          <div class="role">Brand Identity</div>
+          <h3>D <span class="en">Director, BI Design</span></h3>
+          <p>가족·돌봄 카테고리의 BI 시스템 작업을 오래 해온 디렉터. 시간이 가도 흔들리지 않는 시각 시스템을 설계합니다.</p>
+        </div>
+        <div class="director">
+          <div class="role">Space &amp; Application</div>
+          <h3>D <span class="en">Director, Space</span></h3>
+          <p>호텔·시니어 레지던스의 공간 브랜딩과 VMD 경력. 인테리어와 BI를 한 호흡 안에서 다룹니다.</p>
+        </div>
+        <div class="director">
+          <div class="role">Product Development</div>
+          <h3>D <span class="en">Director, Product</span></h3>
+          <p>식품 R&amp;D와 제품 기획 경력. 협력 식품사와의 처방 협업, 인증 대응까지 함께 결정합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="col">
+      <p>디렉터의 상세 이력은 첫 미팅에서 직접 안내드립니다.</p>
+      <a href="contact.html" class="link">미팅 문의 <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="col-fluid">
+    <div class="grid">
+      <div>
+        <div class="brand-name"><span class="dot"></span>Steadyseller</div>
+        <p class="tagline">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="about-manifesto.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="specialty-senior.html">Specialty</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>Seoul, Korea</li>
+          <li>월—금 10:00—19:00</li>
+          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Steadyseller. All rights reserved.</span>
+      <span class="meta">Designed in Seoul · Built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mainMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>
