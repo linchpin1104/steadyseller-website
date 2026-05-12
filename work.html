@@ -6,15 +6,15 @@
 <meta name="theme-color" content="#f7f4ec" />
 
 <title>Work — 함께 만들어온 브랜드들 | Steadyseller</title>
-<meta name="description" content="시니어, 가족, 호스피탈리티, F&B 카테고리에서 스테디셀러가 함께 만들어온 브랜드 작업들. 결은 비슷하지만 카테고리는 모두 다릅니다." />
-<meta name="keywords" content="스테디셀러, Work, 포트폴리오, 시니어 브랜딩, 가족 브랜드, 호스피탈리티, F&B 브랜딩 사례" />
+<meta name="description" content="봄마음, 바랑재, 탐라왕, 겨레. 시니어·가족·호스피탈리티·F&B 카테고리에서 스테디셀러가 함께 만들어온 브랜드 작업들." />
+<meta name="keywords" content="스테디셀러, Work, 봄마음, 바랑재, 탐라왕, 겨레, 시니어 브랜딩, 시니어 푸드, 호스피탈리티 브랜딩, 백화점 팝업" />
 <link rel="canonical" href="https://steadyseller.kr/work.html" />
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:site_name" content="Steadyseller" />
 <meta property="og:title" content="Work — 함께 만들어온 브랜드들" />
-<meta property="og:description" content="결은 비슷하지만 카테고리는 모두 다릅니다." />
+<meta property="og:description" content="봄마음, 바랑재, 탐라왕, 겨레. 결은 비슷하지만 카테고리는 모두 다릅니다." />
 <meta property="og:url" content="https://steadyseller.kr/work.html" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -32,7 +32,7 @@
     {
       "@type": "CollectionPage",
       "name": "Work",
-      "description": "함께 만들어온 브랜드들. 시니어, 가족, 호스피탈리티, F&B 카테고리의 케이스 스터디.",
+      "description": "함께 만들어온 브랜드들. 봄마음, 바랑재, 탐라왕, 겨레.",
       "inLanguage": "ko-KR"
     }
   ]
@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=3">
 
 <style>
   .filters {
@@ -86,10 +86,21 @@
     transition: opacity 0.4s var(--ease);
   }
   .work-item:hover { opacity: 0.92; }
-  .work-item .viz {
+  .work-item .img-wrap {
+    width: 100%;
     aspect-ratio: 4 / 3;
     margin-bottom: 1.4rem;
+    overflow: hidden;
+    background: var(--bg-2);
+    position: relative;
   }
+  .work-item .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.4s var(--ease-out);
+  }
+  .work-item:hover .img-wrap img { transform: scale(1.04); }
   .work-item .meta {
     display: flex;
     gap: 0.8rem;
@@ -103,7 +114,7 @@
   .work-item h3 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
     line-height: 1.25;
     letter-spacing: -0.022em;
     margin-bottom: 0.6rem;
@@ -115,7 +126,7 @@
   }
   .work-item .desc {
     color: var(--ink-2);
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     line-height: 1.65;
     margin-bottom: 0.8rem;
     max-width: 38ch;
@@ -124,15 +135,6 @@
     color: var(--ink-3);
     font-size: 0.84rem;
     letter-spacing: 0.04em;
-  }
-
-  .empty-row {
-    grid-column: 1 / -1;
-    padding: 3rem 0;
-    text-align: center;
-    color: var(--ink-3);
-    border: 1px dashed var(--line);
-    border-radius: 4px;
   }
 
   @media (max-width: 760px) {
@@ -170,76 +172,44 @@
 
   <div class="col-wide">
     <div class="filters" role="tablist" aria-label="Project filters">
-      <button class="filter active" data-cat="all">All <span class="count">08</span></button>
-      <button class="filter" data-cat="product">제품 개발 <span class="count">04</span></button>
-      <button class="filter" data-cat="branding">브랜딩 <span class="count">08</span></button>
-      <button class="filter" data-cat="space">공간 기획 <span class="count">04</span></button>
+      <button class="filter active" data-cat="all">All <span class="count">04</span></button>
+      <button class="filter" data-cat="senior">Senior <span class="count">02</span></button>
+      <button class="filter" data-cat="hospitality">Hospitality <span class="count">01</span></button>
+      <button class="filter" data-cat="fnb">F&amp;B <span class="count">01</span></button>
     </div>
 
     <section class="work-grid" id="workGrid">
 
-      <a href="work-semonyeo.html" class="work-item" data-cat="product branding">
-        <div class="viz semonyeo viz-hover"></div>
-        <div class="meta"><span>제품 개발 · 브랜딩</span><span>·</span><span>2025</span></div>
-        <h3>세모녀 <span class="en">Semonyeo</span></h3>
-        <p class="desc">자녀가 부모님께 건네는 식탁.</p>
-        <div class="scope">BI · Package · Retail · Product</div>
+      <a href="work-bommaeum.html" class="work-item" data-cat="senior">
+        <div class="img-wrap"><img src="assets/portfolio/popup/lotte-tasha-tudor/lotte-tasha-tudor-009.webp" alt="봄마음 — 롯데월드타워 타샤튜더전 콜라보 팝업"></div>
+        <div class="meta"><span>Senior · Family Food</span><span>·</span><span>2024 — Ongoing</span></div>
+        <h3>봄마음 <span class="en">Bommaeum</span></h3>
+        <p class="desc">자녀가 부모님께 건네는 식탁. ㈜세모녀의 시니어 푸드 브랜드.</p>
+        <div class="scope">Brand · Package · Product · Space</div>
       </a>
 
-      <a href="work-semonyeo.html" class="work-item" data-cat="space branding product">
-        <div class="viz haru viz-hover"></div>
-        <div class="meta"><span>공간 기획 · 브랜딩</span><span>·</span><span>2024</span></div>
-        <h3>하루의 머무름 <span class="en">A Stayed Day</span></h3>
-        <p class="desc">머무는 시간을 설계하는 일.</p>
-        <div class="scope">BI · Space · Amenity</div>
+      <a href="work-barangjae.html" class="work-item" data-cat="hospitality">
+        <div class="img-wrap"><img src="assets/portfolio/branding/barangjae/barangjae-001.webp" alt="바랑재 — 호텔/스테이 브랜드"></div>
+        <div class="meta"><span>Hospitality · Stay</span><span>·</span><span>2026</span></div>
+        <h3>바랑재 <span class="en">Barangjae</span></h3>
+        <p class="desc">머무는 시간을 위한 자리. 라이나전성기재단의 호스피탈리티 브랜드.</p>
+        <div class="scope">Logo · Amenity · Print · Package</div>
       </a>
 
-      <a href="work-semonyeo.html" class="work-item" data-cat="branding">
-        <div class="viz gyul viz-hover"></div>
-        <div class="meta"><span>브랜딩</span><span>·</span><span>2024</span></div>
-        <h3>아이의 결 <span class="en">Soft Grain</span></h3>
-        <p class="desc">부모와 아이의 시간을 다듬는 일.</p>
-        <div class="scope">BI · Package · Digital</div>
+      <a href="work-tamlawang.html" class="work-item" data-cat="fnb">
+        <div class="img-wrap"><img src="assets/portfolio/branding/tamlawang/tamlawang-001.webp" alt="탐라왕 — 제주 식품 브랜드"></div>
+        <div class="meta"><span>F&amp;B · Package</span><span>·</span><span>2024</span></div>
+        <h3>탐라왕 <span class="en">Tamlawang</span></h3>
+        <p class="desc">제주의 결을 담은 식품 브랜드. 황제농업회사법인의 BI · 패키지.</p>
+        <div class="scope">Logo · Label · Box · Color</div>
       </a>
 
-      <a href="work-semonyeo.html" class="work-item" data-cat="branding space">
-        <div class="viz janjan viz-hover"></div>
-        <div class="meta"><span>브랜딩 · 공간 기획</span><span>·</span><span>2023</span></div>
-        <h3>잔잔한 식 <span class="en">Calm Table</span></h3>
-        <p class="desc">매일의 식탁을 위한 작은 단정함.</p>
-        <div class="scope">BI · Package · VMD</div>
-      </a>
-
-      <a href="work-semonyeo.html" class="work-item" data-cat="space branding">
-        <div class="viz silver viz-hover"></div>
-        <div class="meta"><span>공간 기획 · 브랜딩</span><span>·</span><span>2023</span></div>
-        <h3>은빛 라운지 <span class="en">Silver Lounge</span></h3>
-        <p class="desc">시니어 레지던스의 첫 인상을 다듬는 일.</p>
-        <div class="scope">BI · Interior · Signage</div>
-      </a>
-
-      <a href="work-semonyeo.html" class="work-item" data-cat="product branding">
-        <div class="viz eumi viz-hover"></div>
-        <div class="meta"><span>제품 개발 · 브랜딩</span><span>·</span><span>2023</span></div>
-        <h3>음미 <span class="en">Eumi</span></h3>
-        <p class="desc">시니어의 일상에 자연스럽게 놓이는 라이프스타일 라인.</p>
-        <div class="scope">BI · Package · Product</div>
-      </a>
-
-      <a href="work-semonyeo.html" class="work-item" data-cat="space branding">
-        <div class="viz maru viz-hover"></div>
-        <div class="meta"><span>공간 기획 · 브랜딩</span><span>·</span><span>2022</span></div>
-        <h3>마루 호텔 <span class="en">Maru Hotel</span></h3>
-        <p class="desc">머무름과 식의 결을 동시에 잡는 호스피탈리티.</p>
-        <div class="scope">BI · Space · F&amp;B</div>
-      </a>
-
-      <a href="work-semonyeo.html" class="work-item" data-cat="product branding">
-        <div class="viz bonet viz-hover"></div>
-        <div class="meta"><span>제품 개발 · 브랜딩</span><span>·</span><span>2022</span></div>
-        <h3>본넷 <span class="en">Bonnet</span></h3>
-        <p class="desc">시니어 친화 푸드 라인의 양산형 패키지 시스템.</p>
-        <div class="scope">Package · Retail · OEM</div>
+      <a href="work-gyeore.html" class="work-item" data-cat="senior">
+        <div class="img-wrap"><img src="assets/portfolio/branding/gyeore/gyeore-001.webp" alt="겨레 — 시니어 라이프스타일 브랜드"></div>
+        <div class="meta"><span>Senior · Brand</span><span>·</span><span>2026</span></div>
+        <h3>겨레 <span class="en">Gyeore</span></h3>
+        <p class="desc">시니어를 위한 새로운 라인. ㈜세모녀의 두 번째 브랜드.</p>
+        <div class="scope">Brand · Package · Product</div>
       </a>
 
     </section>

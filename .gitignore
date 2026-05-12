@@ -20,3 +20,13 @@ node_modules/
 # Logs
 *.log
 .cache/
+
+# Source portfolio (raw images, not for repo)
+\[이사님*
+
+# Internal preview helpers
+_preview.html
+_*.html
+
+# Content spec doc
+04_홈페이지_콘텐츠_설계서_v4.md

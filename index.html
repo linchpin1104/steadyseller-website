@@ -889,6 +889,21 @@
   .project-row:last-child { border-bottom: none; }
   .project-row:hover { opacity: 0.92; }
   .project-row .viz { aspect-ratio: 4 / 3; }
+  .project-row .img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--bg-2);
+    border-radius: 2px;
+  }
+  .project-row .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.4s var(--ease-out);
+    display: block;
+  }
+  .project-row:hover .img-wrap img { transform: scale(1.04); }
   .project-row.flip { grid-template-columns: 1.2fr 1fr; }
   .project-row.flip .info { order: 2; }
   .project-row.flip .visual-wrap { order: 1; }
@@ -1156,51 +1171,67 @@
       </div>
 
       <div class="projects-list">
-        <a href="work.html" class="project-row">
+        <a href="work-bommaeum.html" class="project-row">
           <div class="visual-wrap">
-            <div class="viz haru viz-hover"></div>
+            <div class="img-wrap"><img src="assets/portfolio/popup/lotte-tasha-tudor/lotte-tasha-tudor-009.webp" alt="봄마음 — 롯데월드타워 타샤튜더전 콜라보 팝업"></div>
           </div>
           <div class="info">
             <div class="label-row">
-              <span>Hospitality</span>
+              <span>Senior · Family Food</span>
               <span class="sep">·</span>
-              <span>2024</span>
+              <span>2024 — Ongoing</span>
             </div>
-            <h3>하루의 머무름<span class="en">A Stayed Day</span></h3>
-            <p>호텔의 한 객실에서 하루가 어떻게 흐르는지를 설계한 작업. 입실 30초의 안도감부터 퇴실까지의 동선, 어메니티의 손에 닿는 무게까지 한 호흡 안에서 정리했습니다.</p>
+            <h3>봄마음<span class="en">Bommaeum</span></h3>
+            <p>자녀가 부모님께 건네는 식탁. ㈜세모녀와 2024년 1월부터 함께 만들어온 시니어 푸드 브랜드. 브랜딩에서 제품 개발, 백화점 팝업 19회까지 한 호흡으로 가져가고 있습니다.</p>
             <span class="link">케이스 보기 <span class="arrow">→</span></span>
           </div>
         </a>
 
-        <a href="work.html" class="project-row flip">
+        <a href="work-barangjae.html" class="project-row flip">
           <div class="info">
             <div class="label-row">
-              <span>Family · Care</span>
+              <span>Hospitality · Stay</span>
               <span class="sep">·</span>
-              <span>2024</span>
+              <span>2026</span>
             </div>
-            <h3>아이의 결<span class="en">Soft Grain</span></h3>
-            <p>부모와 아이가 같이 마주하는 시간을 다듬는 라이프스타일 라인. 케어 카테고리의 임상적 톤을 피하고, 일상의 결로 풀어낸 BI와 패키지 시스템을 함께 만들었습니다.</p>
+            <h3>바랑재<span class="en">Barangjae</span></h3>
+            <p>머무는 시간을 위한 자리. 라이나전성기재단의 호스피탈리티 브랜드로, 로고와 어메니티, 인쇄물, 패키지까지 한 톤 안에서 결을 잡았습니다.</p>
             <span class="link">케이스 보기 <span class="arrow">→</span></span>
           </div>
           <div class="visual-wrap">
-            <div class="viz gyul viz-hover"></div>
+            <div class="img-wrap"><img src="assets/portfolio/branding/barangjae/barangjae-001.webp" alt="바랑재 — 호스피탈리티 브랜드"></div>
           </div>
         </a>
 
-        <a href="work.html" class="project-row">
+        <a href="work-tamlawang.html" class="project-row">
           <div class="visual-wrap">
-            <div class="viz warm viz-hover"></div>
+            <div class="img-wrap"><img src="assets/portfolio/branding/tamlawang/tamlawang-001.webp" alt="탐라왕 — 제주 식품 브랜드"></div>
           </div>
           <div class="info">
             <div class="label-row">
-              <span>F&amp;B · Retail</span>
+              <span>F&amp;B · Package</span>
               <span class="sep">·</span>
-              <span>2023</span>
+              <span>2024</span>
             </div>
-            <h3>잔잔한 식<span class="en">Calm Table</span></h3>
-            <p>매일의 식탁에 자연스럽게 놓이는 작은 단정함을 콘셉트로, 편집숍 매대 시스템과 시즌 패키지 라인을 함께 정리한 작업입니다.</p>
+            <h3>탐라왕<span class="en">Tamlawang</span></h3>
+            <p>제주의 결을 담은 식품 브랜드. ㈜황제농업회사법인의 BI · 라벨 · 박스 패키지 · 컬러 팔레트를 한 톤 안에서 정리했습니다.</p>
             <span class="link">케이스 보기 <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <a href="work-gyeore.html" class="project-row flip">
+          <div class="info">
+            <div class="label-row">
+              <span>Senior · Brand</span>
+              <span class="sep">·</span>
+              <span>2026</span>
+            </div>
+            <h3>겨레<span class="en">Gyeore</span></h3>
+            <p>봄마음 옆에 나란히 설 ㈜세모녀의 두 번째 시니어 브랜드. 한 클라이언트의 두 결을 분명히 나누는 패턴부터 시작했습니다.</p>
+            <span class="link">케이스 보기 <span class="arrow">→</span></span>
+          </div>
+          <div class="visual-wrap">
+            <div class="img-wrap"><img src="assets/portfolio/branding/gyeore/gyeore-001.webp" alt="겨레 — 시니어 라이프스타일 브랜드"></div>
           </div>
         </a>
       </div>
