@@ -370,6 +370,99 @@
   .hero .where span::before { content: '·'; color: var(--accent); font-size: 1.4rem; line-height: 0.5; }
   .hero .where span:first-child::before { display: none; }
 
+  /* ─── Pop-up Marquee (백화점 팝업 롤링) ─── */
+  .popup-marquee {
+    padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(3rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .popup-marquee .pm-head {
+    padding: 0 var(--pad-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: var(--col-fluid);
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .popup-marquee .pm-count {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--ink-3);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+  .popup-marquee .pm-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+  }
+  .popup-marquee .pm-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: pm-scroll 40s linear infinite;
+  }
+  .popup-marquee:hover .pm-track { animation-play-state: paused; }
+  @keyframes pm-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .popup-marquee .pm-item {
+    flex: 0 0 clamp(280px, 30vw, 420px);
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-2);
+    border-radius: 2px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .popup-marquee .pm-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s var(--ease-out);
+  }
+  .popup-marquee .pm-item:hover img { transform: scale(1.04); }
+  .popup-marquee .pm-item .pm-cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 1.4rem 1.2rem 1rem;
+    background: linear-gradient(to top, rgba(20,19,15,0.85) 0%, rgba(20,19,15,0) 100%);
+    color: var(--dark-ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.88rem;
+    letter-spacing: -0.012em;
+  }
+  .popup-marquee .pm-item .pm-name {
+    font-family: var(--f-sans);
+    font-weight: 500;
+  }
+  .popup-marquee .pm-item .pm-date {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent-2);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 760px) {
+    .popup-marquee .pm-item { flex-basis: 250px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .popup-marquee .pm-track { animation-duration: 80s; }
+  }
+
   /* ─── Specialty Teaser (Senior — moved up) ─── */
   .specialty-teaser {
     padding: clamp(4rem, 7vw, 6rem) 0 clamp(4rem, 7vw, 6rem);
@@ -1020,6 +1113,60 @@
     </div>
   </section>
 
+  <!-- ─── POP-UP MARQUEE (백화점 팝업 실적) ─── -->
+  <section class="popup-marquee" aria-label="백화점 팝업 운영 실적">
+    <div class="pm-head">
+      <span class="label">— Pop-up Track Record · 백화점 팝업 운영</span>
+      <span class="pm-count">신세계 · 현대 · 롯데 · 갤러리아 · 19회 진행</span>
+    </div>
+    <div class="pm-viewport">
+      <div class="pm-track">
+        <!-- group 1 -->
+        <a href="work-bommaeum.html" class="pm-item">
+          <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="신세계 강남" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">신세계 강남</span><span class="pm-date">2025.05</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item">
+          <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="현대 압구정 본점" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">현대 압구정 본점</span><span class="pm-date">2025.07</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item">
+          <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="롯데월드몰 잠실" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">롯데월드몰</span><span class="pm-date">2025.10</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item">
+          <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대 판교" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">현대 판교</span><span class="pm-date">2026.02</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item">
+          <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 명품관 압구정" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">갤러리아 명품관</span><span class="pm-date">2024.11</span></div>
+        </a>
+        <!-- group 2 (duplicated for seamless loop) -->
+        <a href="work-bommaeum.html" class="pm-item" aria-hidden="true">
+          <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">신세계 강남</span><span class="pm-date">2025.05</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item" aria-hidden="true">
+          <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">현대 압구정 본점</span><span class="pm-date">2025.07</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item" aria-hidden="true">
+          <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">롯데월드몰</span><span class="pm-date">2025.10</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item" aria-hidden="true">
+          <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">현대 판교</span><span class="pm-date">2026.02</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="pm-item" aria-hidden="true">
+          <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="" loading="lazy">
+          <div class="pm-cap"><span class="pm-name">갤러리아 명품관</span><span class="pm-date">2024.11</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 1. WHY — Manifesto -->
   <section class="manifesto" aria-labelledby="manifesto-heading">
     <div class="col">
@@ -1028,11 +1175,11 @@
       <div class="body">
         <p>처음 일을 시작했을 때부터 같은 생각을 해왔습니다. <strong>좋은 브랜드는 새로움이 아니라 시간을 견디는 힘에서 나온다</strong>는 것입니다.</p>
         <p>시장은 빠르게 움직이고, 수많은 브랜드가 매일 새롭게 등장합니다. 그중 많은 것은 한두 시즌이 지나면 잊힙니다. 자극적인 감각은 빠르게 퍼지지만, 그만큼 빠르게 사라집니다.</p>
-        <p>우리가 다루는 카테고리에는 공통점이 있습니다. 식탁, 침실, 가족, 일상의 손에 닿는 물건들. 사람의 가장 깊은 생활 안에 놓이는 것들입니다. 오래 사랑받는 브랜드에는 하나의 결이 있습니다. 처음 보는 강한 인상보다, 두 번째 만났을 때 자연스럽게 손이 가는 익숙함이 그 브랜드를 오래 남게 합니다.</p>
-        <p>그래서 우리는 새로움을 좇기보다 결을 먼저 살핍니다. 보이는 방식, 전달되는 언어, 일상에 자리 잡는 순간까지 — 오래 남을 결을 만들기 위해 브랜드를 진정성 있게 고민합니다.</p>
+        <p>스테디셀러가 다루는 카테고리에는 공통점이 있습니다. 식탁, 침실, 가족, 일상의 손에 닿는 물건들. 사람의 가장 깊은 생활 안에 놓이는 것들입니다. 오래 사랑받는 브랜드에는 하나의 결이 있습니다. 처음 보는 강한 인상보다, 두 번째 만났을 때 자연스럽게 손이 가는 익숙함이 그 브랜드를 오래 남게 합니다.</p>
+        <p>그래서 스테디셀러는 새로움을 좇기보다 결을 먼저 살핍니다. 보이는 방식, 전달되는 언어, 일상에 자리 잡는 순간까지 — 오래 남을 결을 만들기 위해 브랜드를 진정성 있게 고민합니다.</p>
       </div>
       <div class="quote">
-        <p>좋은 브랜드는 결국 시간이 만듭니다. 우리는 그 시간이 쌓일 수 있도록, 브랜드가 처음 놓일 자리와 방향을 설계합니다.</p>
+        <p>좋은 브랜드는 결국 시간이 만듭니다. 스테디셀러는 그 시간이 쌓일 수 있도록, 브랜드가 처음 놓일 자리와 방향을 설계합니다.</p>
       </div>
     </div>
   </section>
@@ -1043,7 +1190,7 @@
       <div class="hm-head">
         <span class="label">— Method · 어떻게</span>
         <h2 id="method-heading" class="t-h1">일을 시작할 때 묻는 네 가지 질문.</h2>
-        <p class="hm-intro">우리가 일하는 방식은 네 단계로 나뉩니다. 각 단계는 마케팅 사이언스의 검증된 모델 위에 서 있지만, 우리에게는 매 프로젝트마다 차례로 마주하는 네 개의 자리입니다.</p>
+        <p class="hm-intro">스테디셀러가 일하는 방식은 네 단계로 나뉩니다. 각 단계는 마케팅 사이언스의 검증된 모델 위에 서 있지만, 스테디셀러에게는 매 프로젝트마다 차례로 마주하는 네 개의 자리입니다.</p>
       </div>
 
       <div class="hm-list">
@@ -1136,7 +1283,7 @@
         <a href="specialty-senior.html" class="link">See More <span class="arrow">→</span></a>
       </div>
       <h2 id="specialty-teaser-heading" class="st-heading">시니어 시장을 소비자의 시각에서<br/>더 깊고 따뜻하고 섬세하게 바라봅니다.</h2>
-      <p class="st-body">큰 글자와 안전한 색만으로는 시니어의 일상에 닿지 않습니다. 같은 상품도 누가, 언제, 어떤 마음으로 손에 드는지에 따라 다른 카테고리가 됩니다. 시니어 시장의 결을 살피는 것 — 그게 우리가 다른 곳보다 조금 더 잘하는 일입니다.</p>
+      <p class="st-body">큰 글자와 안전한 색만으로는 시니어의 일상에 닿지 않습니다. 같은 상품도 누가, 언제, 어떤 마음으로 손에 드는지에 따라 다른 카테고리가 됩니다. 시니어 시장의 결을 살피는 것 — 그게 스테디셀러가 다른 곳보다 조금 더 잘하는 일입니다.</p>
       <div class="st-four">
         <a href="specialty-senior.html#sp01" class="st-item">
           <div class="n">SP.01</div>
@@ -1173,7 +1320,7 @@
       <div class="projects-list">
         <a href="work-bommaeum.html" class="project-row">
           <div class="visual-wrap">
-            <div class="img-wrap"><img src="assets/portfolio/popup/lotte-tasha-tudor/lotte-tasha-tudor-009.webp" alt="봄마음 — 롯데월드타워 타샤튜더전 콜라보 팝업"></div>
+            <div class="img-wrap"><img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="봄마음 — 현대백화점 판교점 매장 전경"></div>
           </div>
           <div class="info">
             <div class="label-row">
