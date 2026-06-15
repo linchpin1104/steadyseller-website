@@ -329,72 +329,97 @@
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ─── HERO (About-driven landing) ─── */
+  /* ─── HERO — top slider + bottom text ─── */
   .hero {
-    min-height: calc(100vh - var(--nav-h));
-    padding: calc(var(--nav-h) + clamp(4rem, 12vw, 8rem)) 0 clamp(4rem, 8vw, 6rem);
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
+    background: var(--bg);
   }
-  .hero > .col { position: relative; z-index: 2; }
 
-  /* Background popup slideshow */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+  /* Top: large image slider (full-width) */
+  .hero-slider {
+    margin-top: var(--nav-h);
+    width: 100%;
+    height: clamp(360px, 55vh, 560px);
     overflow: hidden;
-  }
-  .hero-bg-track {
-    display: flex;
-    gap: clamp(1rem, 2vw, 1.6rem);
-    height: 100%;
-    width: max-content;
-    animation: hero-scroll 70s linear infinite;
-    align-items: center;
-    padding: 0 clamp(2rem, 4vw, 4rem);
-  }
-  .hero:hover .hero-bg-track { animation-play-state: paused; }
-  .hero-bg-item {
-    flex: 0 0 clamp(320px, 32vw, 480px);
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: 2px;
+    position: relative;
     background: var(--bg-2);
   }
-  .hero-bg-item img {
+  .hero-slider-track {
+    display: flex;
+    gap: clamp(0.8rem, 1.2vw, 1.4rem);
+    height: 100%;
+    width: max-content;
+    align-items: stretch;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+    animation: hero-scroll 60s linear infinite;
+  }
+  .hero-slider:hover .hero-slider-track { animation-play-state: paused; }
+  .hero-slider-item {
+    flex: 0 0 clamp(420px, 48vw, 760px);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2px;
+    background: var(--bg-2);
+    text-decoration: none;
+    color: inherit;
+  }
+  .hero-slider-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: saturate(0.85);
+    transition: transform 1.2s var(--ease-out);
   }
-  .hero-bg-veil {
+  .hero-slider-item:hover img { transform: scale(1.03); }
+  .hero-slider-item .hs-cap {
     position: absolute;
-    inset: 0;
-    z-index: 1;
-    background:
-      radial-gradient(ellipse 70% 80% at 50% 50%, rgba(247, 244, 236, 0.92) 0%, rgba(247, 244, 236, 0.7) 35%, rgba(247, 244, 236, 0.55) 100%),
-      linear-gradient(180deg, rgba(247, 244, 236, 0.5) 0%, rgba(247, 244, 236, 0.4) 50%, rgba(247, 244, 236, 0.65) 100%);
-    backdrop-filter: blur(0.5px);
-    pointer-events: none;
+    left: 0; right: 0; bottom: 0;
+    padding: 2rem 1.6rem 1.2rem;
+    background: linear-gradient(to top, rgba(14,14,11,0.78) 0%, rgba(14,14,11,0.3) 65%, rgba(14,14,11,0) 100%);
+    color: var(--dark-ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.95rem;
+    letter-spacing: -0.012em;
   }
+  .hero-slider-item .hs-name {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: -0.012em;
+  }
+  .hero-slider-item .hs-date {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent-2);
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+  }
+
   @keyframes hero-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero-bg-track { animation-duration: 140s; }
+    .hero-slider-track { animation-duration: 120s; }
+  }
+  @media (max-width: 760px) {
+    .hero-slider { height: clamp(280px, 42vh, 380px); }
+    .hero-slider-item { flex-basis: 85vw; }
   }
 
-  /* Pop-up venues caption inside hero */
+  /* Bottom: text area */
+  .hero-text {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+
+  /* Pop-up venues caption inside hero text */
   .hero-marquee-caption {
-    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
     padding-top: 1.4rem;
     border-top: 1px solid var(--line);
     display: flex;
@@ -1177,25 +1202,56 @@
 
 <main>
 
-  <!-- HERO with background popup slideshow -->
+  <!-- HERO: top image slider + bottom text -->
   <section class="hero" aria-label="Introduction">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-bg-track">
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="" loading="eager"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="" loading="eager"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="" loading="eager"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="" loading="eager"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="" loading="eager"></div>
+    <div class="hero-slider" aria-label="백화점 팝업 운영 매장 슬라이드">
+      <div class="hero-slider-track">
+        <a href="work-bommaeum.html" class="hero-slider-item">
+          <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="신세계 강남 봄마음 팝업" loading="eager">
+          <div class="hs-cap"><span class="hs-name">신세계 강남</span><span class="hs-date">2025.05</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item">
+          <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="현대 압구정 본점 봄마음 팝업" loading="eager">
+          <div class="hs-cap"><span class="hs-name">현대 압구정 본점</span><span class="hs-date">2025.07</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item">
+          <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="롯데월드몰 잠실 봄마음 팝업" loading="eager">
+          <div class="hs-cap"><span class="hs-name">롯데월드몰</span><span class="hs-date">2025.10</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item">
+          <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대 판교 봄마음 팝업" loading="eager">
+          <div class="hs-cap"><span class="hs-name">현대 판교</span><span class="hs-date">2026.02</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item">
+          <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 명품관 봄마음 팝업" loading="eager">
+          <div class="hs-cap"><span class="hs-name">갤러리아 명품관</span><span class="hs-date">2024.11</span></div>
+        </a>
         <!-- duplicate for seamless loop -->
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="" loading="lazy"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="" loading="lazy"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="" loading="lazy"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="" loading="lazy"></div>
-        <div class="hero-bg-item"><img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="" loading="lazy"></div>
+        <a href="work-bommaeum.html" class="hero-slider-item" aria-hidden="true" tabindex="-1">
+          <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="" loading="lazy">
+          <div class="hs-cap"><span class="hs-name">신세계 강남</span><span class="hs-date">2025.05</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item" aria-hidden="true" tabindex="-1">
+          <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="" loading="lazy">
+          <div class="hs-cap"><span class="hs-name">현대 압구정 본점</span><span class="hs-date">2025.07</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item" aria-hidden="true" tabindex="-1">
+          <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="" loading="lazy">
+          <div class="hs-cap"><span class="hs-name">롯데월드몰</span><span class="hs-date">2025.10</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item" aria-hidden="true" tabindex="-1">
+          <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="" loading="lazy">
+          <div class="hs-cap"><span class="hs-name">현대 판교</span><span class="hs-date">2026.02</span></div>
+        </a>
+        <a href="work-bommaeum.html" class="hero-slider-item" aria-hidden="true" tabindex="-1">
+          <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="" loading="lazy">
+          <div class="hs-cap"><span class="hs-name">갤러리아 명품관</span><span class="hs-date">2024.11</span></div>
+        </a>
       </div>
-      <div class="hero-bg-veil"></div>
     </div>
-    <div class="col">
+
+    <div class="hero-text">
+     <div class="col">
       <div class="top-meta">
         <span class="label">Steadyseller — Branding Studio</span>
         <span class="since">Est. Seoul</span>
@@ -1207,6 +1263,7 @@
         <span class="dot-anim"></span>
         <span>백화점 팝업 19회 · 신세계 · 현대 · 롯데 · 갤러리아</span>
       </div>
+     </div>
     </div>
   </section>
 
