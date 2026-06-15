@@ -447,8 +447,11 @@
   /* ══════════════ PAGE 6 — 봄마음 Brand & Product ══════════════ */
   .case-page {
     padding-top: 1in;
-    padding-bottom: 0.55in;
+    padding-bottom: 0.6in;
+    display: flex;
+    flex-direction: column;
   }
+  .case-page .case-head { flex-shrink: 0; }
   .case-head {
     display: flex;
     justify-content: space-between;
@@ -509,7 +512,8 @@
     display: grid;
     grid-template-columns: 0.9fr 1.4fr;
     gap: 0.5in;
-    height: calc(100% - 1.55in - 9mm);
+    flex: 1;
+    min-height: 0;
   }
   .case-brief .ch-meta {
     color: var(--ink-3);
@@ -541,7 +545,10 @@
     grid-template-columns: 1.4fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 4mm;
+    min-height: 0;
     height: 100%;
+    max-height: 100%;
+    overflow: hidden;
   }
   .product-gallery .gi {
     overflow: hidden;
@@ -566,8 +573,11 @@
   /* ══════════════ PAGE 7 — 봄마음 Pop-up ══════════════ */
   .popup-page {
     padding-top: 1in;
-    padding-bottom: 0.45in;
+    padding-bottom: 0.6in;
+    display: flex;
+    flex-direction: column;
   }
+  .popup-page .sub-head { flex-shrink: 0; }
   .popup-page .sub-head {
     display: flex;
     justify-content: space-between;
@@ -610,9 +620,10 @@
   }
   .popup-body {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 0.9fr 1.6fr;
     gap: 0.5in;
-    height: calc(100% - 1.45in - 9mm);
+    flex: 1;
+    min-height: 0;
   }
   .timeline-block .tl-label {
     color: var(--accent);
@@ -657,10 +668,13 @@
 
   .popup-gallery {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.6fr 1fr;
     gap: 4mm;
+    min-height: 0;
     height: 100%;
+    max-height: 100%;
+    overflow: hidden;
   }
   .popup-gallery .gi {
     overflow: hidden;
@@ -668,8 +682,8 @@
     position: relative;
     border-radius: 2px;
   }
-  .popup-gallery .gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .popup-gallery .gi.lead { grid-row: 1 / 3; }
+  .popup-gallery .gi img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .popup-gallery .gi.lead { grid-column: 1 / 3; }
   .popup-gallery .gi .cap {
     position: absolute;
     bottom: 3mm; left: 3mm;
@@ -682,14 +696,16 @@
     font-weight: 500;
   }
 
-  /* ══════════════ PAGE 8 — OTHER WORKS + CONTACT ══════════════ */
+  /* ══════════════ PAGE 8 — OTHER WORKS ══════════════ */
   .closing-page {
-    padding-top: 1.4in;
-    padding-bottom: 0.7in;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 10mm;
+    padding-top: 1.1in;
+    padding-bottom: 0.85in;
+    display: flex;
+    flex-direction: column;
+    gap: 9mm;
   }
+  .closing-page .sec-head { flex-shrink: 0; }
+  .closing-page .other-works { flex: 1; min-height: 0; align-items: start; }
   .closing-page .sec-head .label { display: block; margin-bottom: 5mm; }
   .closing-page .sec-head h2 {
     font-family: var(--f-sans);
@@ -710,7 +726,7 @@
   }
   .ow-card .ow-img {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 5/4;
     overflow: hidden;
     background: var(--bg-2);
     margin-bottom: 5mm;
@@ -784,6 +800,148 @@
   .contact-block .info-list { color: var(--dark-mute); font-size: 11pt; line-height: 1.7; }
   .contact-block .info-list .label-dark { display: block; margin-bottom: 2mm; }
   .contact-block .info-list p { color: var(--dark-ink); font-weight: 500; }
+
+  /* ══════════════ PAGE 9 — CONTACT (DARK, FULL PAGE) ══════════════ */
+  .contact-page {
+    background: var(--dark-bg);
+    color: var(--dark-ink);
+    padding: 0.85in 1in;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 12mm;
+    position: relative;
+  }
+  .contact-page::before {
+    content: 'Contact';
+    position: absolute;
+    bottom: -0.55in;
+    right: -0.1in;
+    font-family: var(--f-en);
+    font-style: italic;
+    color: rgba(240, 235, 222, 0.04);
+    font-size: 320pt;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+  .contact-page .ph { color: var(--dark-mute); }
+  .contact-page .logo { color: var(--dark-ink); }
+  .contact-page .logo .dot { background: var(--accent-2); }
+  .contact-page .pf { color: var(--dark-mute); }
+
+  .contact-page .ctop {
+    position: relative;
+    z-index: 1;
+  }
+  .contact-page .ctop .label {
+    color: var(--accent-2);
+    display: block;
+    margin-bottom: 8mm;
+  }
+  .contact-page .ctop h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 42pt;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    color: var(--dark-ink);
+    max-width: 22ch;
+    margin-bottom: 14mm;
+  }
+  .contact-page .ctop .email-block {
+    display: inline-flex;
+    flex-direction: column;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid rgba(240, 235, 222, 0.18);
+  }
+  .contact-page .ctop .email-block .email-label {
+    font-size: 9pt;
+    color: var(--dark-mute);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 4mm;
+  }
+  .contact-page .ctop .email-block a {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent-2);
+    font-size: 34pt;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .contact-page .cgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12mm;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(240, 235, 222, 0.12);
+    padding-top: 12mm;
+  }
+  .contact-page .cgrid .ccol h4 {
+    color: var(--accent-2);
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 6mm;
+  }
+  .contact-page .cgrid .ccol p {
+    color: var(--dark-ink);
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 13pt;
+    line-height: 1.65;
+    letter-spacing: -0.012em;
+  }
+  .contact-page .cgrid .ccol ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-page .cgrid .ccol ul li {
+    color: var(--dark-ink);
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 11pt;
+    line-height: 1.7;
+    letter-spacing: -0.012em;
+    padding: 1.5mm 0;
+    padding-left: 5mm;
+    position: relative;
+  }
+  .contact-page .cgrid .ccol ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--dark-mute);
+  }
+
+  .contact-page .cclosing {
+    border-top: 1px solid rgba(240, 235, 222, 0.12);
+    padding-top: 7mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--dark-mute);
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-page .cclosing .quote {
+    color: var(--accent-2);
+    font-family: var(--f-en);
+    font-style: italic;
+    font-size: 14pt;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
 </style>
 </head>
 <body>
@@ -1048,16 +1206,16 @@
     </div>
     <div class="popup-gallery">
       <div class="gi lead">
-        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대 판교 매장 전경">
+        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대 판교 매장 전경 — BOMMAEUM 매장">
         <div class="cap">현대 판교 · 2026.02</div>
       </div>
       <div class="gi">
-        <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 압구정">
+        <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 압구정 매대">
         <div class="cap">갤러리아 · 2024.11</div>
       </div>
       <div class="gi">
-        <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="신세계 강남 매대">
-        <div class="cap">신세계 강남 · 2025.05</div>
+        <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="현대 압구정 본점 매장">
+        <div class="cap">현대 압구정 본점 · 2025.07</div>
       </div>
     </div>
   </div>
@@ -1067,14 +1225,14 @@
   </div>
 </section>
 
-<!-- ════════ PAGE 8 — OTHER WORKS + CONTACT ════════ -->
+<!-- ════════ PAGE 8 — OTHER WORKS ════════ -->
 <section class="page closing-page">
   <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div>08 · Other Works &amp; Contact</div>
+    <div>08 · Other Works</div>
   </div>
   <div class="sec-head">
-    <span class="label gold">— Selected Work</span>
+    <span class="label gold">— Selected Work · 함께한 다른 브랜드</span>
     <h2>함께 만들어온 다른 브랜드들.</h2>
   </div>
 
@@ -1083,36 +1241,69 @@
       <div class="ow-img"><img src="assets/portfolio/branding/barangjae/barangjae-001.webp" alt="바랑재"></div>
       <div class="ow-meta"><span>Hospitality · Stay</span><span class="sep">·</span><span>2026</span></div>
       <div class="ow-title">바랑재<span class="en">Barangjae</span></div>
-      <div class="ow-desc">머무는 시간을 위한 자리. 라이나전성기재단의 호스피탈리티 브랜드. 로고 · 어메니티 · 인쇄물 · 패키지.</div>
+      <div class="ow-desc">라이나전성기재단의 호스피탈리티 브랜드. 로고 · 어메니티 · 인쇄물 · 패키지.</div>
     </div>
     <div class="ow-card">
       <div class="ow-img"><img src="assets/portfolio/branding/tamlawang/tamlawang-001.webp" alt="탐라왕"></div>
       <div class="ow-meta"><span>F&amp;B · Package</span><span class="sep">·</span><span>2024</span></div>
       <div class="ow-title">탐라왕<span class="en">Tamlawang</span></div>
-      <div class="ow-desc">제주의 결을 담은 식품 브랜드. ㈜황제농업회사법인의 BI · 라벨 · 박스 패키지 · 컬러 팔레트.</div>
+      <div class="ow-desc">㈜황제농업회사법인의 제주 식품 브랜드. BI · 라벨 · 박스 패키지 · 컬러 팔레트.</div>
     </div>
     <div class="ow-card">
       <div class="ow-img"><img src="assets/portfolio/branding/gyeore/gyeore-001.webp" alt="겨레"></div>
       <div class="ow-meta"><span>Senior · Brand</span><span class="sep">·</span><span>2026</span></div>
       <div class="ow-title">겨레<span class="en">Gyeore</span></div>
-      <div class="ow-desc">봄마음 옆에 나란히 설 ㈜세모녀의 두 번째 시니어 브랜드. 한지의 결을 모티브로 한 패턴 시스템.</div>
+      <div class="ow-desc">㈜세모녀의 두 번째 시니어 브랜드. 한지의 결을 모티브로 한 패턴 시스템.</div>
+    </div>
+  </div>
+  <div class="pf">
+    <span class="web">— STEADYSELLER.KR</span>
+    <span>08</span>
+  </div>
+</section>
+
+<!-- ════════ PAGE 9 — CONTACT (DARK, FULL PAGE) ════════ -->
+<section class="page contact-page">
+  <div class="ph">
+    <div class="logo"><span class="dot"></span>Steadyseller</div>
+    <div>09 · Contact</div>
+  </div>
+
+  <div class="ctop">
+    <span class="label">— Contact · 함께 만들어갑시다</span>
+    <h2>함께 오래도록 가치있는<br/>브랜드를 만들어가고 싶습니다.</h2>
+    <div class="email-block">
+      <span class="email-label">— New Project Inquiry</span>
+      <a href="mailto:contact@bommaum.com">contact@bommaum.com</a>
     </div>
   </div>
 
-  <div class="contact-block">
-    <div>
-      <div class="label-dark">— Contact</div>
-      <h3>함께 오래도록 가치있는<br/>브랜드를 만들어가고 싶습니다.</h3>
-      <a class="email" href="mailto:contact@bommaum.com">contact@bommaum.com</a>
-    </div>
-    <div class="info-list">
-      <span class="label-dark">Studio</span>
+  <div class="cgrid">
+    <div class="ccol">
+      <h4>Studio</h4>
       <p>Steadyseller<br/>Seoul, Korea</p>
     </div>
-    <div class="info-list">
-      <span class="label-dark">People</span>
-      <p>Brand Strategy<br/>BI Design<br/>Space &amp; Application<br/>Product Development</p>
+    <div class="ccol">
+      <h4>People · 디렉터</h4>
+      <ul>
+        <li>Brand Strategy</li>
+        <li>Brand Identity</li>
+        <li>Space &amp; Application</li>
+        <li>Product Development</li>
+      </ul>
     </div>
+    <div class="ccol">
+      <h4>Web</h4>
+      <p>steadyseller.kr</p>
+      <h4 style="margin-top:8mm;">Hours</h4>
+      <p>월—금<br/>10:00 — 19:00 KST</p>
+    </div>
+  </div>
+
+  <div class="cclosing">
+    <span>© 2026 Steadyseller</span>
+    <span class="quote">Brands made to stay.</span>
+    <span>09 / 09</span>
   </div>
 </section>
 
