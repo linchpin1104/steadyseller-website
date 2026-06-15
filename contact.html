@@ -234,7 +234,27 @@
         <div class="info-item"><h4>Hours</h4><p>월—금<br/>10:00—19:00 KST</p></div>
       </aside>
 
-      <form onsubmit="event.preventDefault(); alert('문의가 접수되었습니다.\n1~2영업일 안에 회신드립니다.');">
+      <form id="contactForm" onsubmit="event.preventDefault();
+        const f = new FormData(this);
+        const scope = Array.from(this.querySelectorAll('input[name=scope]:checked')).map(i => i.nextElementSibling.innerText.trim()).join(', ') || '미정';
+        const body = [
+          '── 새 프로젝트 문의 ──',
+          '',
+          '이름 / 직책: ' + (f.get('name') || ''),
+          '회사 / 브랜드: ' + (f.get('company') || ''),
+          '이메일: ' + (f.get('email') || ''),
+          '',
+          '카테고리: ' + (f.get('category') || ''),
+          '현재 단계: ' + (f.get('stage') || ''),
+          '의뢰 범위: ' + scope,
+          '희망 시작 시점: ' + (f.get('start') || '미정'),
+          '예상 예산: ' + (f.get('budget') || '미정'),
+          '',
+          '── 배경 ──',
+          f.get('background') || '',
+        ].join('\n');
+        const subject = '[프로젝트 문의] ' + (f.get('company') || f.get('name') || '제목 없음');
+        window.location.href = 'mailto:contact@bommaum.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);">
         <div class="field">
           <label>이름 / 직책 <span class="req">*</span></label>
           <input type="text" name="name" required placeholder="홍길동 / 브랜드 매니저">

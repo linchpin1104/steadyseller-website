@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<title>Steadyseller — Company Brochure (16:9)</title>
+<title>Steadyseller — Company Brochure (6p, 16:9)</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 
 <style>
   @page {
-    size: 13.333in 7.5in;  /* PowerPoint widescreen 16:9 */
+    size: 13.333in 7.5in;
     margin: 0;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,6 +29,7 @@
     --dark-bg: #0e0e0b;
     --dark-ink: #f0ebde;
     --dark-mute: #8a8275;
+    --dark-line: rgba(240, 235, 222, 0.12);
     --f-sans: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
     --f-en: 'Cormorant Garamond', 'Times New Roman', serif;
   }
@@ -48,7 +49,7 @@
   .page {
     width: 13.333in;
     height: 7.5in;
-    padding: 0.55in 0.7in;
+    padding: 0.55in 0.75in;
     page-break-after: always;
     page-break-inside: avoid;
     position: relative;
@@ -58,6 +59,55 @@
   .page:last-child { page-break-after: auto; }
   .page.dark { background: var(--dark-bg); color: var(--dark-ink); }
 
+  /* Common header / footer */
+  .ph {
+    position: absolute;
+    top: 0.4in;
+    left: 0.75in;
+    right: 0.75in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+  .page.dark .ph { color: var(--dark-mute); }
+  .logo {
+    font-family: var(--f-sans);
+    font-weight: 600;
+    font-size: 11pt;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: none;
+  }
+  .logo .dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+  .page.dark .logo { color: var(--dark-ink); }
+  .page.dark .logo .dot { background: var(--accent-2); }
+
+  .pf {
+    position: absolute;
+    bottom: 0.35in;
+    left: 0.75in;
+    right: 0.75in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--ink-3);
+    font-size: 9pt;
+    letter-spacing: 0.06em;
+  }
+  .page.dark .pf { color: var(--dark-mute); }
+  .pf .web { font-family: var(--f-sans); font-style: normal; font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+
+  /* Labels */
   .label {
     font-size: 7.5pt;
     color: var(--ink-3);
@@ -65,345 +115,403 @@
     text-transform: uppercase;
     font-weight: 500;
   }
-  .label.accent { color: var(--accent); }
-  .en { font-family: var(--f-en); font-style: italic; font-weight: 400; }
-
-  .page-num {
-    position: absolute;
-    bottom: 0.35in;
-    right: 0.7in;
-    font-family: var(--f-en);
-    font-style: italic;
-    color: var(--ink-3);
-    font-size: 9pt;
-    letter-spacing: 0.08em;
-  }
-  .page.dark .page-num { color: var(--dark-mute); }
-
-  .logo {
-    font-family: var(--f-sans);
-    font-weight: 600;
-    font-size: 11pt;
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    letter-spacing: -0.018em;
-  }
-  .logo .dot {
-    width: 5px; height: 5px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .page.dark .logo { color: var(--dark-ink); }
-  .page.dark .logo .dot { background: var(--accent-2); }
   .page.dark .label { color: var(--dark-mute); }
+  .label.gold { color: var(--accent); }
+  .page.dark .label.gold { color: var(--accent-2); }
+  .en { font-family: var(--f-en); font-style: italic; }
 
-  .page-header {
-    position: absolute;
-    top: 0.35in;
-    left: 0.7in;
-    right: 0.7in;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* ─── PAGE 1: COVER ─── */
+  /* ══════════════ PAGE 1 — COVER ══════════════ */
   .cover {
     background: var(--ink);
     color: var(--dark-ink);
+    padding: 0.55in 0.75in;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    padding: 0.55in 0.7in;
+    grid-template-columns: 1.5fr 1fr;
     align-items: stretch;
   }
-  .cover .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .cover .top { display: flex; flex-direction: column; gap: 6mm; }
+  .cover .left { display: flex; flex-direction: column; justify-content: space-between; }
   .cover .logo { color: var(--dark-ink); font-size: 14pt; }
   .cover .logo .dot { background: var(--accent-2); width: 7px; height: 7px; }
   .cover .eyebrow {
     color: var(--accent-2);
     font-size: 9pt;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 500;
-    margin-top: 22mm;
+    margin-bottom: 6mm;
   }
   .cover h1 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 44pt;
-    line-height: 1.05;
+    font-size: 46pt;
+    line-height: 1.04;
     letter-spacing: -0.04em;
     color: var(--dark-ink);
-    margin-top: 6mm;
     max-width: 14ch;
   }
   .cover .subtitle {
     font-family: var(--f-en);
     font-style: italic;
     color: var(--dark-mute);
-    font-size: 15pt;
-    margin-top: 8mm;
+    font-size: 16pt;
+    margin-top: 9mm;
     letter-spacing: 0.04em;
   }
-  .cover .footer-line {
+  .cover .bottom-meta {
     display: flex;
     justify-content: space-between;
-    color: var(--dark-mute);
-    font-size: 8pt;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-  .cover .footer-line .doc { color: var(--dark-ink); font-weight: 500; }
-  .cover .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-end;
-    gap: 6mm;
-  }
-  .cover .right .meta {
-    text-align: right;
     color: var(--dark-mute);
     font-size: 8pt;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
   }
-  .cover .right .year {
+  .cover .bottom-meta .doc { color: var(--dark-ink); }
+  .cover .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cover .right .meta {
+    text-align: right;
+    color: var(--dark-mute);
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.7;
+  }
+  .cover .year {
     font-family: var(--f-en);
     font-style: italic;
-    font-size: 80pt;
+    font-size: 90pt;
     color: var(--accent-2);
-    line-height: 0.9;
+    line-height: 0.85;
     letter-spacing: -0.02em;
-    opacity: 0.5;
+    opacity: 0.55;
   }
 
-  /* ─── PAGE 2: MANIFESTO ─── */
+  /* ══════════════ PAGE 2 — MANIFESTO ══════════════ */
   .manifesto-page {
+    padding-top: 1.1in;
+    padding-bottom: 0.85in;
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1fr 1.4fr;
     gap: 0.6in;
-    padding-top: 1in;
-    padding-bottom: 0.7in;
   }
-  .manifesto-page .left .label { display: block; margin-bottom: 8mm; }
+  .manifesto-page .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .manifesto-page .left .label { margin-bottom: 8mm; }
   .manifesto-page .left h2 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 24pt;
-    line-height: 1.15;
+    font-size: 26pt;
+    line-height: 1.12;
     letter-spacing: -0.03em;
   }
-  .manifesto-page .left .quote {
-    margin-top: 20mm;
+  .manifesto-page .left .signature {
+    color: var(--ink-3);
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
     padding-top: 6mm;
     border-top: 1px solid var(--line);
-    font-family: var(--f-sans);
-    font-weight: 500;
-    font-size: 11pt;
-    line-height: 1.6;
-    color: var(--ink);
     max-width: 28ch;
-    letter-spacing: -0.018em;
   }
-  .manifesto-page .right { padding-top: 12mm; }
   .manifesto-page .right p {
-    font-size: 10pt;
-    line-height: 1.85;
+    font-size: 10.5pt;
+    line-height: 1.9;
     color: var(--ink-2);
-    margin-bottom: 4mm;
+    margin-bottom: 5mm;
   }
   .manifesto-page .right p strong { color: var(--ink); font-weight: 500; }
+  .manifesto-page .right p:last-child { margin-bottom: 0; }
 
-  /* ─── PAGE 3: SERVICES ─── */
-  .services-page { padding-top: 0.95in; }
-  .services-page .sec-head { margin-bottom: 10mm; }
-  .services-page .sec-head .label { display: block; margin-bottom: 4mm; }
-  .services-page .sec-head h2 {
+  /* ══════════════ PAGE 3 — APPROACH + SERVICES ══════════════ */
+  .ap-page {
+    padding-top: 1in;
+    padding-bottom: 0.85in;
+  }
+  .ap-page .sec-head { margin-bottom: 7mm; }
+  .ap-page .sec-head h2 {
     font-family: var(--f-sans);
     font-weight: 500;
     font-size: 22pt;
     line-height: 1.15;
     letter-spacing: -0.03em;
+    margin-top: 3mm;
   }
-  .services-page .sec-head .lede {
-    margin-top: 4mm;
-    font-size: 9.5pt;
-    color: var(--ink-2);
-    line-height: 1.7;
-    max-width: 60ch;
-  }
-  .services-grid {
+  .ap-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6mm;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 0.55in;
   }
-  .svc-card {
-    padding-top: 4mm;
-    border-top: 1px solid var(--ink);
+
+  /* Approach (left) */
+  .approach-block .label { display: block; margin-bottom: 4mm; }
+  .approach-block h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 14pt;
+    line-height: 1.25;
+    letter-spacing: -0.022em;
+    margin-bottom: 5mm;
   }
-  .svc-card .n {
+  .approach-block .intro {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 7mm;
+    max-width: 38ch;
+  }
+  .approach-list { border-top: 1px solid var(--ink); }
+  .approach-row {
+    display: grid;
+    grid-template-columns: 28pt 1fr;
+    gap: 4mm;
+    padding: 3mm 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .approach-row .n {
     font-family: var(--f-en);
     font-style: italic;
     color: var(--accent);
     font-size: 9pt;
     letter-spacing: 0.04em;
-    margin-bottom: 3mm;
   }
-  .svc-card .t {
+  .approach-row .t {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 10.5pt;
+    font-size: 10pt;
     color: var(--ink);
-    line-height: 1.3;
-    margin-bottom: 3mm;
-    letter-spacing: -0.018em;
+    letter-spacing: -0.012em;
   }
-  .svc-card .t .badge {
+
+  /* Services (right) */
+  .services-block .label { display: block; margin-bottom: 4mm; }
+  .services-block h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 14pt;
+    line-height: 1.25;
+    letter-spacing: -0.022em;
+    margin-bottom: 5mm;
+  }
+  .services-block .intro {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 7mm;
+    max-width: 40ch;
+  }
+  .services-list { border-top: 1px solid var(--ink); }
+  .svc-row {
+    display: grid;
+    grid-template-columns: 38pt 1fr auto;
+    gap: 4mm;
+    padding: 3mm 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .svc-row .n {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 9pt;
+    letter-spacing: 0.04em;
+  }
+  .svc-row .t {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 10pt;
+    color: var(--ink);
+    letter-spacing: -0.012em;
+  }
+  .svc-row .t .badge {
     display: inline-block;
     background: var(--accent);
     color: var(--dark-ink);
     padding: 0.5mm 2mm;
     font-size: 6.5pt;
-    font-weight: 500;
     letter-spacing: 0.1em;
     margin-left: 1mm;
     vertical-align: 1.5mm;
+    font-weight: 500;
   }
-  .svc-card .d {
+  .svc-row .m {
     color: var(--ink-3);
-    font-size: 8.5pt;
-    line-height: 1.55;
-  }
-  .svc-card .meta {
-    margin-top: 4mm;
-    font-size: 7pt;
-    color: var(--ink-4);
+    font-size: 7.5pt;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
   }
 
-  /* ─── PAGE 4: SPECIALTY (DARK) ─── */
+  /* ══════════════ PAGE 4 — SPECIALTY / SENIOR (DARK) ══════════════ */
   .specialty-page {
-    padding-top: 0.95in;
+    padding-top: 1in;
+    padding-bottom: 0.85in;
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 0.5in;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 0.55in;
+    position: relative;
   }
+  .specialty-page::before {
+    content: 'Senior';
+    position: absolute;
+    top: 0.5in;
+    right: -0.15in;
+    font-family: var(--f-en);
+    font-style: italic;
+    color: rgba(240, 235, 222, 0.04);
+    font-size: 240pt;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+  .specialty-page .left { position: relative; z-index: 1; }
   .specialty-page .left .label { display: block; margin-bottom: 6mm; }
   .specialty-page .left h2 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 26pt;
+    font-size: 28pt;
     line-height: 1.1;
     letter-spacing: -0.03em;
     color: var(--dark-ink);
+    margin-bottom: 8mm;
   }
   .specialty-page .left .lede {
-    margin-top: 8mm;
     font-size: 9.5pt;
-    color: var(--dark-mute);
-    line-height: 1.75;
-    max-width: 32ch;
+    line-height: 1.85;
+    color: #c4bdae;
+    max-width: 36ch;
+    margin-bottom: 8mm;
+  }
+  .specialty-page .left .lede strong { color: var(--dark-ink); font-weight: 500; }
+  .specialty-page .left .pillar {
+    margin-top: auto;
+    padding-top: 6mm;
+    border-top: 1px solid var(--dark-line);
+    color: var(--accent-2);
+    font-family: var(--f-en);
+    font-style: italic;
+    font-size: 11pt;
+    letter-spacing: 0.04em;
   }
   .specialty-page .right {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4mm;
     align-content: center;
+    position: relative;
+    z-index: 1;
   }
   .sp-card {
-    padding: 5mm;
+    padding: 6mm 5mm 6mm 5mm;
     background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    flex-direction: column;
+    min-height: 60mm;
   }
-  .sp-card .n {
+  .sp-card .sp-n {
     font-size: 7.5pt;
     color: var(--accent-2);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 3mm;
   }
-  .sp-card .t {
+  .sp-card .sp-t {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 11pt;
+    font-size: 12pt;
     color: var(--dark-ink);
-    margin-bottom: 3mm;
+    margin-bottom: 4mm;
     letter-spacing: -0.018em;
   }
-  .sp-card .d {
-    color: var(--dark-mute);
+  .sp-card .sp-d {
+    color: #b3ad9e;
     font-size: 8.5pt;
-    line-height: 1.55;
+    line-height: 1.65;
+    margin-top: auto;
   }
 
-  /* ─── CASE PAGES: common ─── */
-  .case-page { padding-top: 0.95in; padding-bottom: 0.7in; }
+  /* ══════════════ PAGE 5 — 봄마음 CASE ══════════════ */
+  .case-page {
+    padding-top: 1in;
+    padding-bottom: 0.85in;
+  }
   .case-head {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     padding-bottom: 5mm;
     border-bottom: 1px solid var(--line);
-    margin-bottom: 7mm;
+    margin-bottom: 6mm;
   }
-  .page.dark .case-head { border-bottom-color: rgba(255,255,255,0.12); }
-  .case-head .label-row {
+  .case-head .left .label-row {
     display: flex;
     gap: 3mm;
     color: var(--ink-3);
-    font-size: 8pt;
-    letter-spacing: 0.14em;
+    font-size: 7.5pt;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 4mm;
   }
-  .case-head .label-row .sep { color: var(--ink-4); }
-  .case-head h1 {
+  .case-head .left h1 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 26pt;
+    font-size: 30pt;
     line-height: 1.05;
     letter-spacing: -0.035em;
   }
-  .case-head h1 .en { display: inline-block; color: var(--ink-3); font-size: 0.45em; margin-left: 3mm; }
-  .case-head .tagline {
+  .case-head .left h1 .en {
+    color: var(--ink-3);
+    font-size: 0.42em;
+    margin-left: 4mm;
+    letter-spacing: 0.04em;
+  }
+  .case-head .left .tagline {
     margin-top: 2mm;
     color: var(--ink-2);
-    font-size: 11pt;
+    font-size: 10pt;
   }
   .case-head .meta-grid {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 1.5mm 6mm;
+    gap: 1.2mm 6mm;
     text-align: right;
-    font-size: 8pt;
   }
-  .case-head .meta-grid .k { color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; font-size: 6.8pt; }
-  .case-head .meta-grid .v { font-weight: 500; color: var(--ink); }
+  .case-head .meta-grid .k {
+    color: var(--ink-3);
+    font-size: 6.8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .case-head .meta-grid .v {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
 
-  /* Case content split: left brief / right gallery */
-  .case-content {
+  .case-body {
     display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 0.5in;
-    height: calc(100% - 1.6in);
+    grid-template-columns: 0.85fr 1.3fr;
+    gap: 0.4in;
+    height: calc(100% - 1.6in - 6mm);
   }
   .case-brief .ch-meta {
     color: var(--ink-3);
-    font-size: 7.5pt;
+    font-size: 7pt;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 4mm;
@@ -412,187 +520,176 @@
   .case-brief h2 {
     font-family: var(--f-sans);
     font-weight: 500;
-    font-size: 14pt;
+    font-size: 13pt;
     line-height: 1.3;
     letter-spacing: -0.022em;
     margin-bottom: 5mm;
   }
   .case-brief p {
-    font-size: 9.5pt;
+    font-size: 9pt;
     line-height: 1.85;
     color: var(--ink-2);
     margin-bottom: 3mm;
   }
   .case-brief p strong { color: var(--ink); font-weight: 500; }
-
-  .case-gallery { display: grid; gap: 3mm; height: 100%; }
-  .case-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .case-gallery .item { overflow: hidden; background: var(--bg-2); }
-  .case-gallery.g-1 { grid-template-columns: 1fr; }
-  .case-gallery.g-2v { grid-template-columns: 1fr 1fr; }
-  .case-gallery.g-2h { grid-template-rows: 1fr 1fr; }
-  .case-gallery.g-3 { grid-template-columns: repeat(3, 1fr); }
-  .case-gallery.g-4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
-  .case-gallery.g-mix-2 { grid-template-columns: 1.4fr 1fr; }
-  .case-gallery.g-mix-2 .stack { display: grid; grid-template-rows: 1fr 1fr; gap: 3mm; }
-  .case-gallery.g-mix-2 .stack .item { aspect-ratio: auto; }
-
-  /* Full-width gallery page (pop-up galleries) */
-  .gallery-page { padding-top: 0.95in; padding-bottom: 0.7in; }
-  .gallery-page .sub-head {
+  .case-brief .timeline {
+    margin-top: 5mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--line);
+  }
+  .case-brief .timeline .tl-label {
+    font-size: 7pt;
+    color: var(--ink-3);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 3mm;
+  }
+  .case-brief .timeline .tl-list {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 5mm;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 6mm;
+    flex-direction: column;
+    gap: 1.5mm;
   }
-  .gallery-page .sub-head .left .label-row {
-    display: flex; gap: 3mm; color: var(--ink-3);
-    font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase;
-    font-weight: 500; margin-bottom: 3mm;
+  .case-brief .timeline .tl-row {
+    display: grid;
+    grid-template-columns: 36pt 1fr;
+    gap: 3mm;
+    font-size: 8pt;
+    line-height: 1.4;
   }
-  .gallery-page .sub-head .left h2 {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 18pt; line-height: 1.15; letter-spacing: -0.025em;
+  .case-brief .timeline .tl-row .d {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 8pt;
   }
-  .gallery-page .sub-head .left h2 .en { color: var(--ink-3); font-size: 0.55em; margin-left: 3mm; font-family: var(--f-en); font-style: italic; }
-  .gallery-page .sub-head .right {
-    text-align: right; font-size: 8pt; color: var(--ink-3);
-    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  .case-brief .timeline .tl-row .w {
+    color: var(--ink-2);
+    font-weight: 500;
   }
-  .pop-grid {
-    display: grid; gap: 4mm;
-    height: calc(100% - 1.2in);
+
+  .case-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3mm;
+    height: 100%;
   }
-  .pop-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .pop-grid .item { overflow: hidden; background: var(--bg-2); position: relative; }
-  .pop-grid .item .cap {
+  .case-gallery .gi { overflow: hidden; background: var(--bg-2); position: relative; }
+  .case-gallery .gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .case-gallery .gi.lead { grid-row: 1 / 3; }
+  .case-gallery .gi .cap {
     position: absolute;
-    bottom: 2mm; left: 3mm;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    padding: 1mm 2.5mm;
-    font-size: 6.8pt;
-    letter-spacing: 0.12em;
+    bottom: 2mm; left: 2.5mm;
+    padding: 0.8mm 2mm;
+    background: rgba(0,0,0,0.6);
+    color: var(--dark-ink);
+    font-size: 6.5pt;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 500;
   }
-  .pop-grid.g-3 { grid-template-columns: repeat(3, 1fr); }
-  .pop-grid.g-4 { grid-template-columns: repeat(4, 1fr); }
-  .pop-grid.g-mix { grid-template-columns: 1.6fr 1fr 1fr; }
-  .pop-grid.g-mix .stack { display: grid; grid-template-rows: 1fr 1fr; gap: 4mm; }
-  .pop-grid.g-mix .stack .item { aspect-ratio: auto; }
 
-  /* Timeline page */
-  .timeline-page { padding-top: 0.95in; }
-  .timeline-page .sub-head {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    padding-bottom: 5mm; border-bottom: 1px solid var(--line); margin-bottom: 8mm;
-  }
-  .timeline-page .sub-head h2 {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 20pt; line-height: 1.15; letter-spacing: -0.025em;
-  }
-  .timeline-page .sub-head .right { text-align: right; font-size: 8pt; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
-  .timeline-grid {
+  /* ══════════════ PAGE 6 — OTHER WORKS + CONTACT ══════════════ */
+  .closing-page {
+    padding-top: 1in;
+    padding-bottom: 0.85in;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 12mm;
+    grid-template-rows: auto 1fr auto;
+    gap: 8mm;
   }
-  .timeline-row {
-    display: grid;
-    grid-template-columns: 22mm 1fr;
-    gap: 5mm;
-    padding: 3.5mm 0;
-    border-bottom: 1px solid var(--line);
-    align-items: baseline;
-  }
-  .timeline-row .date {
-    font-family: var(--f-en); font-style: italic;
-    color: var(--accent); font-size: 9pt;
-  }
-  .timeline-row .where {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 9.5pt; color: var(--ink);
-    letter-spacing: -0.012em;
-  }
-  .timeline-row .where .note {
-    display: block; color: var(--ink-3); font-weight: 400;
-    font-size: 7.5pt; margin-top: 0.5mm;
-    letter-spacing: 0.06em; text-transform: none;
+  .closing-page .sec-head .label { display: block; margin-bottom: 3mm; }
+  .closing-page .sec-head h2 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 20pt;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
   }
 
-  /* Contact page */
-  .contact-page { background: var(--ink); color: var(--dark-ink); }
-  .contact-page .logo { color: var(--dark-ink); }
-  .contact-page .logo .dot { background: var(--accent-2); }
-  .contact-page .page-num { color: var(--dark-mute); }
-  .contact-page .label { color: var(--dark-mute); }
-  .contact-page .layout {
+  .other-works {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 0.5in;
-    padding-top: 0.95in;
-    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6mm;
   }
-  .contact-page .col-l h2 {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 22pt; line-height: 1.15;
-    letter-spacing: -0.03em; color: var(--dark-ink);
-    margin-top: 5mm; margin-bottom: 12mm;
+  .ow-card {
+    display: flex;
+    flex-direction: column;
   }
-  .contact-page .col-l .label { display: block; }
-  .contact-page .col-l .email {
-    font-family: var(--f-en); font-style: italic;
-    font-size: 16pt; color: var(--accent-2);
-    margin-top: 4mm; letter-spacing: 0.02em;
+  .ow-card .ow-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--bg-2);
+    margin-bottom: 4mm;
   }
-  .contact-page .col-m h4, .contact-page .col-r h4 {
-    font-size: 7.5pt; color: var(--accent-2);
-    letter-spacing: 0.2em; text-transform: uppercase;
-    font-weight: 500; margin-bottom: 4mm;
+  .ow-card .ow-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ow-card .ow-meta {
+    color: var(--ink-3);
+    font-size: 7pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2mm;
+    display: flex;
+    gap: 3mm;
   }
-  .contact-page .col-m p {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 10.5pt; color: var(--dark-ink);
-    line-height: 1.6; margin-bottom: 8mm;
-    letter-spacing: -0.012em;
+  .ow-card .ow-meta .sep { color: var(--ink-4); }
+  .ow-card .ow-title {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 14pt;
+    letter-spacing: -0.022em;
+    margin-bottom: 2mm;
   }
-  .contact-page .director {
-    padding: 2.5mm 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  .ow-card .ow-title .en {
+    color: var(--ink-3);
+    font-size: 0.55em;
+    margin-left: 2mm;
   }
-  .contact-page .director:last-child { border-bottom: none; }
-  .contact-page .director .role {
-    font-size: 7pt; color: var(--dark-mute);
-    letter-spacing: 0.16em; text-transform: uppercase;
-    font-weight: 500; margin-bottom: 1mm;
+  .ow-card .ow-desc {
+    color: var(--ink-2);
+    font-size: 8.5pt;
+    line-height: 1.65;
   }
-  .contact-page .director .name {
-    font-family: var(--f-sans); font-weight: 500;
-    font-size: 10pt; color: var(--dark-ink);
-    letter-spacing: -0.015em;
-  }
-  .contact-page .closing {
-    position: absolute;
-    bottom: 0.4in;
-    left: 0.7in;
-    right: 0.7in;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    padding-top: 5mm;
-    display: flex; justify-content: space-between;
-    align-items: center;
-    color: var(--dark-mute);
-    font-size: 8pt; letter-spacing: 0.14em;
-    text-transform: uppercase; font-weight: 500;
-  }
-  .contact-page .closing .tag {
+
+  .contact-block {
+    background: var(--ink);
     color: var(--dark-ink);
-    font-family: var(--f-en); font-style: italic;
-    text-transform: none; font-size: 12pt;
-    letter-spacing: 0.02em;
+    padding: 7mm 10mm;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 8mm;
+    margin: 0 -0.25in;
   }
+  .contact-block h3 {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 13pt;
+    line-height: 1.3;
+    letter-spacing: -0.022em;
+    color: var(--dark-ink);
+    margin-bottom: 3mm;
+  }
+  .contact-block .label-dark {
+    color: var(--accent-2);
+    font-size: 7pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2mm;
+  }
+  .contact-block .email {
+    font-family: var(--f-en);
+    font-style: italic;
+    color: var(--accent-2);
+    font-size: 14pt;
+    letter-spacing: 0.02em;
+    margin-top: 3mm;
+  }
+  .contact-block .info-list { color: var(--dark-mute); font-size: 8.5pt; line-height: 1.7; }
+  .contact-block .info-list .label-dark { display: block; margin-bottom: 1.5mm; }
+  .contact-block .info-list p { color: var(--dark-ink); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -600,135 +697,144 @@
 <!-- ════════ PAGE 1 — COVER ════════ -->
 <section class="page cover">
   <div class="left">
-    <div class="top">
+    <div>
       <div class="logo"><span class="dot"></span>Steadyseller</div>
-      <span class="eyebrow">— Branding Studio · Seoul</span>
-      <h1>오래 사랑받는 브랜드를 만듭니다.</h1>
+    </div>
+    <div>
+      <div class="eyebrow">— Branding Studio · Seoul</div>
+      <h1>오래 사랑받는<br/>브랜드를 만듭니다.</h1>
       <div class="subtitle">Brands made to stay.</div>
     </div>
-    <div class="footer-line">
+    <div class="bottom-meta">
       <span>steadyseller.kr</span>
-      <span class="doc">— 회사 소개</span>
-      <span>EST. SEOUL</span>
+      <span class="doc">— Company Brochure</span>
+      <span>Est. Seoul</span>
     </div>
   </div>
   <div class="right">
-    <div class="meta">Company Brochure<br/>2026</div>
+    <div class="meta">Company<br/>Brochure<br/>2026</div>
     <div class="year">2026</div>
   </div>
 </section>
 
 <!-- ════════ PAGE 2 — MANIFESTO ════════ -->
 <section class="page manifesto-page">
-  <div class="page-header">
+  <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">02 · Manifesto · 왜</div>
+    <div>02 · Manifesto · 왜</div>
   </div>
   <div class="left">
-    <span class="label">— Manifesto · 왜</span>
-    <h2>시간이 검증한 것만이, 결국 브랜드가 됩니다.</h2>
-    <div class="quote">좋은 브랜드는 결국 시간이 만듭니다. 스테디셀러는 그 시간이 작동할 수 있도록 첫 자리를 잡아주는 일을 합니다.</div>
+    <div>
+      <span class="label">— Manifesto · 왜</span>
+      <h2>시간을 견딘 것만이,<br/>결국 브랜드가 됩니다.</h2>
+    </div>
+    <div class="signature">시간이 자산이 되는 자리에서, 길게 가는 브랜드를 함께 만듭니다.</div>
   </div>
   <div class="right">
-    <p>처음 일을 시작했을 때부터 같은 생각을 하고 있었습니다. <strong>좋은 브랜드의 조건은 새로움이 아니라 시간을 견디는 것</strong>이라는 생각입니다.</p>
-    <p>시장은 빠르게 움직입니다. 하지만 그렇게 만들어진 브랜드들 중 다수는 한두 시즌을 지나며 잊힙니다. 자극적인 감각은 사람들에게 빠르게 확산되지만 빠르게 사라집니다.</p>
-    <p>스테디셀러가 다루는 카테고리에는 공통점이 있습니다. 식탁, 침실, 가족, 일상의 손에 닿는 물건들. 사람의 깊은 자리에 놓이는 것들입니다. 사랑받는 브랜드는 하나의 결을 가지고 있습니다. 처음 보는 강한 인상보다, 두 번째 만났을 때 자연스럽게 손이 가는 익숙함이 더 큰 힘이 된다고 믿습니다.</p>
-    <p>그래서 스테디셀러는 새로움을 좇기보다 결을 먼저 살핍니다. 보여지는 것, 전달되는 것, 그리고 자리잡는 것까지 — 오래가는 결로 남을 수 있도록 브랜드에 대해 진정성있게 고민합니다.</p>
+    <p>스테디셀러는 처음부터 같은 생각을 해왔습니다. <strong>좋은 브랜드는 새로움이 아니라 시간을 견디는 힘에서 나온다</strong>는 생각입니다.</p>
+    <p>시장은 빠르게 움직이고 수많은 브랜드가 매일 등장합니다. 그 중 많은 것은 한두 시즌이 지나면 잊힙니다. 자극적인 감각은 빠르게 퍼지지만, 그만큼 빠르게 사라집니다.</p>
+    <p>스테디셀러가 다루는 카테고리에는 공통점이 있습니다. 식탁, 침실, 가족, 일상의 손에 닿는 물건들 — 사람의 가장 깊은 생활에 놓이는 것들입니다. 처음 보는 강한 인상보다, 두 번째 만났을 때 자연스럽게 손이 가는 익숙함이 브랜드를 오래 남게 합니다.</p>
+    <p>그래서 스테디셀러는 새로움을 좇기보다 결을 먼저 살핍니다. 보이는 방식, 전달되는 언어, 일상에 자리 잡는 순간까지 — 오래 남을 결을 만들기 위해 브랜드에 대해 진정성있게 고민합니다.</p>
   </div>
-  <div class="page-num">— 02</div>
+  <div class="pf">
+    <span class="web">— STEADYSELLER.KR</span>
+    <span>02</span>
+  </div>
 </section>
 
-<!-- ════════ PAGE 3 — SERVICES ════════ -->
-<section class="page services-page">
-  <div class="page-header">
+<!-- ════════ PAGE 3 — APPROACH + SERVICES ════════ -->
+<section class="page ap-page">
+  <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">03 · Services · 하는 일</div>
+    <div>03 · Approach &amp; Services</div>
   </div>
-  <div class="sec-head">
-    <span class="label">— Services · 하는 일</span>
-    <h2>다섯 가지 영역에서 일합니다.</h2>
-    <p class="lede">대부분의 프로젝트는 두세 가지가 결합된 형태로 진행됩니다. 신규 브랜드는 1번에서 시작해 2~3번으로 확장되고, 식품 카테고리에서는 5번이 처음부터 결합되는 경우가 많습니다.</p>
-  </div>
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="n">— S.01</div>
-      <div class="t">Brand Strategy &amp; Identity</div>
-      <div class="d">브랜드의 이름과 자리, 시각 시스템을 결정하는 일.</div>
-      <div class="meta">8 — 14 wks</div>
+  <div class="ap-grid">
+    <!-- LEFT: Approach -->
+    <div class="approach-block">
+      <span class="label gold">— Approach · 어떻게</span>
+      <h3>스테디셀러는 네 가지 관점을<br/>가지고 프로젝트를 진행합니다.</h3>
+      <p class="intro">시장 분석에서 출발하지 않습니다. 고객의 삶에서 브랜드가 어디에 놓일 것인지 먼저 살핍니다. 마케팅 사이언스의 검증된 모델 위에서, 매 프로젝트마다 같은 네 가지 관점을 가지고 갑니다.</p>
+      <div class="approach-list">
+        <div class="approach-row"><span class="n">— 01</span><span class="t">누구에게 이 브랜드가 전해지는가</span></div>
+        <div class="approach-row"><span class="n">— 02</span><span class="t">언제 떠올라야 하는가</span></div>
+        <div class="approach-row"><span class="n">— 03</span><span class="t">무엇으로 기억될 것인가</span></div>
+        <div class="approach-row"><span class="n">— 04</span><span class="t">어디에서 손에 닿을 것인가</span></div>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="n">— S.02</div>
-      <div class="t">Brand Application</div>
-      <div class="d">패키지, 인쇄물, 디지털 자산. 톤이 손에 닿는 자리.</div>
-      <div class="meta">4 — 10 wks</div>
-    </div>
-    <div class="svc-card">
-      <div class="n">— S.03</div>
-      <div class="t">Space &amp; Retail Experience</div>
-      <div class="d">매대, 팝업, 쇼룸. 짧은 시간 안에 압축되어 보이는 자리.</div>
-      <div class="meta">6 — 12 wks</div>
-    </div>
-    <div class="svc-card">
-      <div class="n">— S.04</div>
-      <div class="t">Space &amp; Interiors<span class="badge">Senior</span></div>
-      <div class="d">시니어가 머무는 공간을 처음부터 함께 설계.</div>
-      <div class="meta">12 — 24 wks</div>
-    </div>
-    <div class="svc-card">
-      <div class="n">— S.05</div>
-      <div class="t">Product Development</div>
-      <div class="d">손에 들리는 물건의 형태와 처방까지.</div>
-      <div class="meta">12 — 24 wks</div>
+
+    <!-- RIGHT: Services -->
+    <div class="services-block">
+      <span class="label gold">— Services · 하는 일</span>
+      <h3>다섯 가지 영역에서<br/>한 호흡으로 다룹니다.</h3>
+      <p class="intro">대부분의 프로젝트는 이 중 두세 가지가 결합된 형태로 진행됩니다. 신규 브랜드는 1번에서 시작해 2~3번으로 확장되고, 식품 카테고리는 5번이 처음부터 결합됩니다.</p>
+      <div class="services-list">
+        <div class="svc-row"><span class="n">— S.01</span><span class="t">Brand Strategy &amp; Identity</span><span class="m">8–14 wks</span></div>
+        <div class="svc-row"><span class="n">— S.02</span><span class="t">Brand Application</span><span class="m">4–10 wks</span></div>
+        <div class="svc-row"><span class="n">— S.03</span><span class="t">Space &amp; Retail Experience</span><span class="m">6–12 wks</span></div>
+        <div class="svc-row"><span class="n">— S.04</span><span class="t">Space &amp; Interiors<span class="badge">Senior</span></span><span class="m">12–24 wks</span></div>
+        <div class="svc-row"><span class="n">— S.05</span><span class="t">Product Development</span><span class="m">12–24 wks</span></div>
+      </div>
     </div>
   </div>
-  <div class="page-num">— 03</div>
+  <div class="pf">
+    <span class="web">— STEADYSELLER.KR</span>
+    <span>03</span>
+  </div>
 </section>
 
 <!-- ════════ PAGE 4 — SPECIALTY (DARK) ════════ -->
 <section class="page dark specialty-page">
-  <div class="page-header">
+  <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">04 · Specialty · 무엇을 / Senior</div>
+    <div>04 · Specialty / Senior</div>
   </div>
   <div class="left">
     <span class="label">— Specialty / Senior</span>
-    <h2>시니어 시장을 더 깊고 따뜻하고 섬세하게.</h2>
-    <p class="lede">시니어를 위한 브랜드가 아니라, 시니어의 일상에 자연스럽게 놓일 수 있는 브랜드를 만듭니다. 큰 글자와 안전한 색만으로는 시니어의 일상에 닿지 않습니다.</p>
+    <h2>시니어의 일상에 가장<br/>가까운 브랜드를 만듭니다.</h2>
+    <p class="lede">큰 활자와 안전한 색만으로는 시니어의 일상에 닿지 않습니다. 같은 상품도 누가, 언제, 어떤 마음으로 손에 드는지에 따라 다른 카테고리가 됩니다. <strong>시니어 시장의 결을 살피는 것</strong> — 스테디셀러가 가장 잘하는 일입니다.</p>
+    <div class="pillar">머무는 공간 · 사용하는 물건 · 마주하는 식탁 · 시간을 채우는 경험</div>
   </div>
   <div class="right">
     <div class="sp-card">
-      <div class="n">SP.01 · 머무는 공간</div>
-      <div class="t">호텔 · 시니어 레지던스 · 라운지</div>
-      <div class="d">시니어가 하루의 대부분을 보내는 자리. 보호받는 느낌과 보통 손님의 자존감 사이의 균형.</div>
+      <div class="sp-n">SP.01</div>
+      <div class="sp-t">머무는 공간</div>
+      <div class="sp-d">호텔 · 시니어 레지던스 · 라운지. 시니어가 하루의 대부분을 보내는 자리. 보호받는 느낌과 보통 손님의 자존감 사이의 균형.</div>
     </div>
     <div class="sp-card">
-      <div class="n">SP.02 · 사용하는 물건</div>
-      <div class="t">컵 · 슬리퍼 · 핸드크림</div>
-      <div class="d">한 손으로 뚜껑을 열 수 있는 친화의 시작, 의료기기처럼 보이지 않는 라이프스타일의 끝.</div>
+      <div class="sp-n">SP.02</div>
+      <div class="sp-t">사용하는 물건</div>
+      <div class="sp-d">컵 · 슬리퍼 · 핸드크림. 한 손으로 뚜껑을 열 수 있는 친화의 시작이지만, 의료기기처럼 보이지 않는 것이 라이프스타일의 끝.</div>
     </div>
     <div class="sp-card">
-      <div class="n">SP.03 · 마주하는 식탁</div>
-      <div class="t">시니어 푸드 · 케어푸드</div>
-      <div class="d">구매 결정자(자녀)와 사용자(부모)가 다른 카테고리. 두 시선을 한 패키지에.</div>
+      <div class="sp-n">SP.03</div>
+      <div class="sp-t">마주하는 식탁</div>
+      <div class="sp-d">시니어 푸드는 자녀가 부모님께 건네는 식탁이기도 합니다. 구매 결정자와 사용자가 다른 카테고리. 두 시선을 한 패키지에.</div>
     </div>
     <div class="sp-card">
-      <div class="n">SP.04 · 시간을 채우는 경험</div>
-      <div class="t">문화 · 여행 · 교육</div>
-      <div class="d">은퇴 이후 가장 큰 자원, 시간. 라벨이 아니라 결로 분류되는 경험.</div>
+      <div class="sp-n">SP.04</div>
+      <div class="sp-t">시간을 채우는 경험</div>
+      <div class="sp-d">은퇴 이후 가장 큰 자원, 시간. "시니어용"이라는 라벨이 아니라 결로 분류되는 경험을 만듭니다.</div>
     </div>
   </div>
-  <div class="page-num">— 04</div>
+  <div class="pf">
+    <span class="web">— STEADYSELLER.KR</span>
+    <span>04</span>
+  </div>
 </section>
 
-<!-- ════════ PAGE 5 — 봄마음 · Brand & Product ════════ -->
+<!-- ════════ PAGE 5 — 봄마음 CASE ════════ -->
 <section class="page case-page">
-  <div class="page-header">
+  <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">05 · Work / 봄마음 · Brand &amp; Product</div>
+    <div>05 · Featured Case / 봄마음</div>
   </div>
   <div class="case-head">
     <div class="left">
-      <div class="label-row"><span>Work / 봄마음</span><span class="sep">·</span><span>Senior · Family Food</span></div>
+      <div class="label-row">
+        <span>Work / 봄마음</span>
+        <span style="color:var(--ink-4);">·</span>
+        <span>Senior · Family Food</span>
+      </div>
       <h1>봄마음<span class="en">Bommaeum</span></h1>
       <div class="tagline">자녀가 부모님께 건네는 식탁.</div>
     </div>
@@ -736,352 +842,104 @@
       <span class="k">Client</span><span class="v">㈜세모녀</span>
       <span class="k">Year</span><span class="v">2024.01 — Ongoing</span>
       <span class="k">Scope</span><span class="v">Brand · Package · Product · Space</span>
-      <span class="k">Status</span><span class="v">팝업 19회 진행</span>
+      <span class="k">Status</span><span class="v">백화점 팝업 19회 진행</span>
     </div>
   </div>
-  <div class="case-content">
+  <div class="case-body">
     <div class="case-brief">
-      <div class="ch-meta">— Ch.01 / Brand &amp; Product</div>
+      <div class="ch-meta">— The Brief</div>
       <h2>마음을 보내는 식탁을 만드는 일</h2>
       <p>봄마음은 ㈜세모녀의 시니어 푸드 브랜드입니다. 영양 보충이 아니라 <strong>자녀의 마음이 부모님의 식탁에 도달하는 방식</strong>을 다루는 브랜드입니다.</p>
-      <p>2024년 1월부터 시작해 브랜딩과 제품을 함께 다듬어가고 있습니다. <strong>봄마음 안심 수저</strong>(2023)에서 출발해 시니어 안심 식판(2025), 시니어 신발(2025), 연화조리기(2026)까지 — 협력 R&amp;D 파트너와 라인을 넓혀가는 중입니다.</p>
-    </div>
-    <div class="case-gallery g-mix-2">
-      <div class="item"><img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="봄마음 — 현대백화점 판교점 매장 전경"></div>
-      <div class="stack">
-        <div class="item"><img src="assets/portfolio/product/bommaeum-spoon/bommaeum-spoon-005.webp" alt="봄마음 수저 컬러 라인"></div>
-        <div class="item"><img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="봄마음 — 갤러리아 압구정 매대"></div>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">— 05</div>
-</section>
+      <p>2024년 1월부터 함께 시작해 브랜딩, 제품 개발, 백화점 팝업까지 한 호흡 안에서 다듬어가고 있습니다. 봄마음 안심 수저(2023)에서 출발해 식판, 신발, 연화조리기까지 라인을 확장 중입니다.</p>
 
-<!-- ════════ PAGE 6 — 봄마음 · Pop-up Vol.1 (갤러리아·신세계·롯데) ════════ -->
-<section class="page gallery-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">06 · Work / 봄마음 · Pop-up Vol.1</div>
-  </div>
-  <div class="sub-head">
-    <div class="left">
-      <div class="label-row"><span>Work / 봄마음</span><span class="sep">·</span><span>Pop-up · Vol.1</span></div>
-      <h2>갤러리아 · 신세계 · 롯데월드 <span class="en">— 2024.11 – 2025.10</span></h2>
-    </div>
-    <div class="right">First 3 venues</div>
-  </div>
-  <div class="pop-grid g-mix">
-    <div class="item">
-      <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 압구정점 팝업">
-      <div class="cap">갤러리아 압구정 · 2024.11</div>
-    </div>
-    <div class="stack">
-      <div class="item">
-        <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-015.webp" alt="갤러리아 압구정점 디테일">
-        <div class="cap">갤러리아 · 디테일</div>
+      <div class="timeline">
+        <div class="tl-label">— 백화점 팝업 19회</div>
+        <div class="tl-list">
+          <div class="tl-row"><span class="d">2024.11</span><span class="w">갤러리아 압구정 · 첫 백화점 팝업</span></div>
+          <div class="tl-row"><span class="d">2025.05</span><span class="w">신세계 강남·본점·대구 (3개점)</span></div>
+          <div class="tl-row"><span class="d">2025.07–11</span><span class="w">현대 압구정·목동·천호·무역센터</span></div>
+          <div class="tl-row"><span class="d">2025.10</span><span class="w">롯데월드몰 잠실</span></div>
+          <div class="tl-row"><span class="d">2025.12</span><span class="w">롯데뮤지엄 「Still, Tasha Tudor」 콜라보</span></div>
+          <div class="tl-row"><span class="d">2026.02–04</span><span class="w">현대 판교·압구정·신촌</span></div>
+        </div>
       </div>
-      <div class="item">
-        <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="신세계 강남점 팝업">
+    </div>
+
+    <div class="case-gallery">
+      <div class="gi lead">
+        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대 판교점 매장">
+        <div class="cap">현대 판교 · 2026.02</div>
+      </div>
+      <div class="gi">
+        <img src="assets/portfolio/popup/galleria-apgujeong/galleria-apgujeong-001.webp" alt="갤러리아 압구정점">
+        <div class="cap">갤러리아 · 2024.11</div>
+      </div>
+      <div class="gi">
+        <img src="assets/portfolio/popup/lotte-tasha-tudor/lotte-tasha-tudor-009.webp" alt="롯데 타샤튜더 콜라보">
+        <div class="cap">타샤튜더 콜라보</div>
+      </div>
+      <div class="gi">
+        <img src="assets/portfolio/popup/shinsegae-gangnam/shinsegae-gangnam-001.webp" alt="신세계 강남">
         <div class="cap">신세계 강남 · 2025.05</div>
       </div>
-    </div>
-    <div class="stack">
-      <div class="item">
-        <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-001.webp" alt="롯데월드 잠실 팝업">
-        <div class="cap">롯데월드 잠실 · 2025.10</div>
-      </div>
-      <div class="item">
-        <img src="assets/portfolio/popup/lotte-jamsil/lotte-jamsil-015.webp" alt="롯데월드 잠실 팝업 디테일">
-        <div class="cap">롯데 잠실 · VMD</div>
+      <div class="gi">
+        <img src="assets/portfolio/product/bommaeum-spoon/bommaeum-spoon-005.webp" alt="봄마음 안심 수저">
+        <div class="cap">봄마음 수저 라인</div>
       </div>
     </div>
   </div>
-  <div class="page-num">— 06</div>
+  <div class="pf">
+    <span class="web">— STEADYSELLER.KR</span>
+    <span>05</span>
+  </div>
 </section>
 
-<!-- ════════ PAGE 7 — 봄마음 · Pop-up Vol.2 (현대백화점 시리즈) ════════ -->
-<section class="page gallery-page">
-  <div class="page-header">
+<!-- ════════ PAGE 6 — OTHER WORKS + CONTACT ════════ -->
+<section class="page closing-page">
+  <div class="ph">
     <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">07 · Work / 봄마음 · Pop-up Vol.2</div>
+    <div>06 · Other Works &amp; Contact</div>
   </div>
-  <div class="sub-head">
-    <div class="left">
-      <div class="label-row"><span>Work / 봄마음</span><span class="sep">·</span><span>Pop-up · Vol.2</span></div>
-      <h2>현대백화점 시리즈 <span class="en">— 2025.07 – 2026.04, 8회</span></h2>
-    </div>
-    <div class="right">Hyundai Dept. Store</div>
+  <div class="sec-head">
+    <span class="label gold">— Selected Work</span>
+    <h2>함께 만들어온 다른 브랜드들.</h2>
   </div>
-  <div class="pop-grid g-mix">
-    <div class="item">
-      <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-001.webp" alt="현대백화점 판교점 팝업">
-      <div class="cap">현대 판교 · 2026.02</div>
-    </div>
-    <div class="stack">
-      <div class="item">
-        <img src="assets/portfolio/popup/hyundai-apgujeong/hyundai-apgujeong-001.webp" alt="현대 압구정 본점 팝업">
-        <div class="cap">현대 압구정 본점 · 2025.07</div>
-      </div>
-      <div class="item">
-        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-005.webp" alt="현대 판교 팝업 디테일">
-        <div class="cap">판교 · 매대 VMD</div>
-      </div>
-    </div>
-    <div class="stack">
-      <div class="item">
-        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-010.webp" alt="현대 판교 팝업 디테일">
-        <div class="cap">판교 · 시즌 라인</div>
-      </div>
-      <div class="item">
-        <img src="assets/portfolio/popup/hyundai-pangyo/hyundai-pangyo-015.webp" alt="현대 판교 팝업 디테일">
-        <div class="cap">판교 · 봄 차림</div>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">— 07</div>
-</section>
 
-<!-- ════════ PAGE 8 — 봄마음 · Pop-up Vol.3 + Timeline ════════ -->
-<section class="page timeline-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">08 · Work / 봄마음 · Pop-up Timeline</div>
+  <div class="other-works">
+    <div class="ow-card">
+      <div class="ow-img"><img src="assets/portfolio/branding/barangjae/barangjae-001.webp" alt="바랑재"></div>
+      <div class="ow-meta"><span>Hospitality · Stay</span><span class="sep">·</span><span>2026</span></div>
+      <div class="ow-title">바랑재<span class="en">Barangjae</span></div>
+      <div class="ow-desc">머무는 시간을 위한 자리. 라이나전성기재단의 호스피탈리티 브랜드. 로고, 어메니티, 인쇄물, 패키지까지 한 톤 안에서 결을 잡았습니다.</div>
+    </div>
+    <div class="ow-card">
+      <div class="ow-img"><img src="assets/portfolio/branding/tamlawang/tamlawang-001.webp" alt="탐라왕"></div>
+      <div class="ow-meta"><span>F&amp;B · Package</span><span class="sep">·</span><span>2024</span></div>
+      <div class="ow-title">탐라왕<span class="en">Tamlawang</span></div>
+      <div class="ow-desc">제주의 결을 담은 식품 브랜드. ㈜황제농업회사법인의 BI · 라벨 · 박스 패키지 · 컬러 팔레트를 한 톤 안에서 정리했습니다.</div>
+    </div>
+    <div class="ow-card">
+      <div class="ow-img"><img src="assets/portfolio/branding/gyeore/gyeore-001.webp" alt="겨레"></div>
+      <div class="ow-meta"><span>Senior · Brand</span><span class="sep">·</span><span>2026</span></div>
+      <div class="ow-title">겨레<span class="en">Gyeore</span></div>
+      <div class="ow-desc">봄마음 옆에 나란히 설 ㈜세모녀의 두 번째 시니어 브랜드. 한지의 결을 모티브로 한 패턴 시스템에서 시작했습니다.</div>
+    </div>
   </div>
-  <div class="sub-head">
+
+  <div class="contact-block">
     <div>
-      <div class="label-row" style="display:flex;gap:3mm;color:var(--ink-3);font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;margin-bottom:3mm;"><span>Work / 봄마음</span><span style="color:var(--ink-4);">·</span><span>Pop-up Timeline</span></div>
-      <h2>2024.11 — 2026.04, 총 19회 진행</h2>
+      <div class="label-dark">— Contact</div>
+      <h3>함께 오래도록 가치있는<br/>브랜드를 만들어가고 싶습니다.</h3>
+      <a class="email" href="mailto:contact@bommaum.com">contact@bommaum.com</a>
     </div>
-    <div class="right">19 popups</div>
-  </div>
-  <div class="timeline-grid">
-    <div>
-      <div class="timeline-row">
-        <span class="date">2024.11</span>
-        <span class="where">갤러리아 압구정점<span class="note">첫 백화점 팝업</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.05</span>
-        <span class="where">신세계 강남·본점·대구<span class="note">3개점 동시 진행</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.05</span>
-        <span class="where">현대백화점 목동점</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.07</span>
-        <span class="where">현대백화점 천호점</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.07</span>
-        <span class="where">현대백화점 목동·압구정 본점<span class="note">현대 시리즈 본격 시작</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.10</span>
-        <span class="where">롯데월드몰 잠실<span class="note">10일 운영</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.11</span>
-        <span class="where">현대백화점 무역센터점</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.11</span>
-        <span class="where">신세계 강남점 (재방문)</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2025.12</span>
-        <span class="where">롯데월드타워 롯데뮤지엄 아트샵<span class="note">「Still, Tasha Tudor」 콜라보 (~26.03)</span></span>
-      </div>
-    </div>
-    <div>
-      <div class="timeline-row">
-        <span class="date">2026.01</span>
-        <span class="where">현대백화점 압구정 본점<span class="note">루담과 콜라보</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.02</span>
-        <span class="where">현대백화점 판교점<span class="note">시즌 라인 — 봄 차림</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.03</span>
-        <span class="where">현대백화점 압구정 본점</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.03</span>
-        <span class="where">현대백화점 신촌점</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.04</span>
-        <span class="where">현대백화점 판교점 (재방문)</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.04</span>
-        <span class="where">현대백화점 무역센터점 (재방문)</span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.05</span>
-        <span class="where">신세계 대구점<span class="note">대구 확장</span></span>
-      </div>
-      <div class="timeline-row">
-        <span class="date">2026.05</span>
-        <span class="where">갤러리아 광교점<span class="note">갤러리아 확장</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">— 08</div>
-</section>
-
-<!-- ════════ PAGE 9 — 바랑재 ════════ -->
-<section class="page case-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">09 · Work / 바랑재</div>
-  </div>
-  <div class="case-head">
-    <div class="left">
-      <div class="label-row"><span>Work / 바랑재</span><span class="sep">·</span><span>Hospitality · Stay</span></div>
-      <h1>바랑재<span class="en">Barangjae</span></h1>
-      <div class="tagline">머무는 시간을 위한 자리.</div>
-    </div>
-    <div class="meta-grid">
-      <span class="k">Client</span><span class="v">라이나전성기재단</span>
-      <span class="k">Year</span><span class="v">2026.04</span>
-      <span class="k">Scope</span><span class="v">Logo · Amenity · Print · Package</span>
-      <span class="k">Status</span><span class="v">운영 진입</span>
-    </div>
-  </div>
-  <div class="case-content">
-    <div class="case-brief">
-      <div class="ch-meta">— Brief</div>
-      <h2>머무는 시간을 정성스럽게 다듬는 자리</h2>
-      <p>바랑재는 라이나전성기재단의 호스피탈리티 브랜드입니다. 객실에 들어선 첫 30초, 어메니티가 손에 잡힐 때의 첫 결, 웰컴레터의 한 줄까지 — <strong>한 톤 안에서 머무는 시간을 다듬는 일</strong>이었습니다.</p>
-      <p>한지의 결과 도자기의 무드를 참고해 <strong>5년 후에도 낡지 않는 결</strong>로 설계했습니다. 국문·영문 시그니처를 A형(가로)·B형(세로) 두 버전으로, 4가지 컬러 톤과 함께 묶어 매체와 자리에 따라 변주합니다.</p>
-    </div>
-    <div class="case-gallery g-mix-2">
-      <div class="item"><img src="assets/portfolio/branding/barangjae/barangjae-001.webp" alt="바랑재 — 공간"></div>
-      <div class="stack">
-        <div class="item"><img src="assets/portfolio/branding/barangjae/barangjae-002.webp" alt="바랑재 인쇄물"></div>
-        <div class="item"><img src="assets/portfolio/branding/barangjae/barangjae-004.webp" alt="바랑재 로고"></div>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">— 09</div>
-</section>
-
-<!-- ════════ PAGE 10 — 탐라왕 ════════ -->
-<section class="page case-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">10 · Work / 탐라왕</div>
-  </div>
-  <div class="case-head">
-    <div class="left">
-      <div class="label-row"><span>Work / 탐라왕</span><span class="sep">·</span><span>F&amp;B · Package</span></div>
-      <h1>탐라왕<span class="en">Tamlawang</span></h1>
-      <div class="tagline">제주의 결을 담은 식품 브랜드.</div>
-    </div>
-    <div class="meta-grid">
-      <span class="k">Client</span><span class="v">㈜황제농업회사법인</span>
-      <span class="k">Year</span><span class="v">2024.08</span>
-      <span class="k">Scope</span><span class="v">Logo · Label · Box · Color</span>
-      <span class="k">Status</span><span class="v">양산 진행 중</span>
-    </div>
-  </div>
-  <div class="case-content">
-    <div class="case-brief">
-      <div class="ch-meta">— Brief</div>
-      <h2>제주에서 만든 것이, 매대 위에서도 제주</h2>
-      <p>㈜황제농업회사법인의 식품 브랜드 탐라왕. 제주에서 길러진 원물의 결이 매대 위에서도 살아 있도록 <strong>로고, 라벨, 박스 패키지, 컬러 팔레트</strong>를 한 톤 안에서 정리했습니다.</p>
-      <p>진한 녹색이나 안전한 베이지 같은 식품 카테고리의 관습적 컬러를 피하고, 제주의 자연 색감과 토양의 결을 옮겨오는 방향으로. 박스 디자인의 무게 균형과 카트에 담길 때의 비례까지 함께 살폈습니다.</p>
-    </div>
-    <div class="case-gallery g-1">
-      <div class="item"><img src="assets/portfolio/branding/tamlawang/tamlawang-001.webp" alt="탐라왕 패키지 로고"></div>
-    </div>
-  </div>
-  <div class="page-num">— 10</div>
-</section>
-
-<!-- ════════ PAGE 11 — 겨레 ════════ -->
-<section class="page case-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">11 · Work / 겨레</div>
-  </div>
-  <div class="case-head">
-    <div class="left">
-      <div class="label-row"><span>Work / 겨레</span><span class="sep">·</span><span>Senior · Brand</span></div>
-      <h1>겨레<span class="en">Gyeore</span></h1>
-      <div class="tagline">시니어를 위한 새로운 라인.</div>
-    </div>
-    <div class="meta-grid">
-      <span class="k">Client</span><span class="v">㈜세모녀</span>
-      <span class="k">Year</span><span class="v">2026.01</span>
-      <span class="k">Scope</span><span class="v">Brand · Package · Product</span>
-      <span class="k">Status</span><span class="v">진행 중</span>
-    </div>
-  </div>
-  <div class="case-content">
-    <div class="case-brief">
-      <div class="ch-meta">— Brief</div>
-      <h2>봄마음 옆에 나란히 설 두 번째 결</h2>
-      <p>겨레는 봄마음을 함께 만든 ㈜세모녀의 두 번째 시니어 브랜드입니다. <strong>같은 클라이언트의 결을 잇되, 한 자리만 더 만들어 다른 시선을 담는 일</strong>.</p>
-      <p>한지의 결을 모티브로 한 패턴 시스템에서 시작해, 패키지와 제품으로 단계적으로 풀어가고 있습니다. 봄마음과 한 자리에 놓일 때 두 브랜드의 결이 흐려지지 않도록, 톤은 유지하되 각자의 결을 분명히 나눕니다.</p>
-    </div>
-    <div class="case-gallery g-mix-2">
-      <div class="item"><img src="assets/portfolio/branding/gyeore/gyeore-001.webp" alt="겨레 — 패키지"></div>
-      <div class="stack">
-        <div class="item"><img src="assets/portfolio/branding/gyeore/gyeore-002.webp" alt="겨레 패턴"></div>
-        <div class="item"><img src="assets/portfolio/branding/gyeore/gyeore-003.webp" alt="겨레 패턴 적용"></div>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">— 11</div>
-</section>
-
-<!-- ════════ PAGE 12 — CONTACT (DARK) ════════ -->
-<section class="page contact-page">
-  <div class="page-header">
-    <div class="logo"><span class="dot"></span>Steadyseller</div>
-    <div class="label">12 · Studio &amp; Contact</div>
-  </div>
-  <div class="layout">
-    <div class="col-l">
-      <span class="label">— Studio &amp; Contact</span>
-      <h2>디렉터들이 직접 만듭니다.<br/>장기적인 그림을 함께 그립니다.</h2>
-      <p class="email">contact@bommaum.com</p>
-    </div>
-    <div class="col-m">
-      <h4>— Studio</h4>
+    <div class="info-list">
+      <span class="label-dark">Studio</span>
       <p>Steadyseller<br/>Seoul, Korea</p>
-      <h4>— Hours</h4>
-      <p>월—금<br/>10:00 — 19:00 KST</p>
-      <h4>— Web</h4>
-      <p>steadyseller.kr</p>
     </div>
-    <div class="col-r">
-      <h4>— People · 디렉터 구성</h4>
-      <div class="director">
-        <div class="role">Brand Strategy</div>
-        <div class="name">D — Director, Strategy</div>
-      </div>
-      <div class="director">
-        <div class="role">Brand Identity</div>
-        <div class="name">D — Director, BI Design</div>
-      </div>
-      <div class="director">
-        <div class="role">Space &amp; Application</div>
-        <div class="name">D — Director, Space</div>
-      </div>
-      <div class="director">
-        <div class="role">Product Development</div>
-        <div class="name">D — Director, Product</div>
-      </div>
+    <div class="info-list">
+      <span class="label-dark">People</span>
+      <p>Brand Strategy<br/>BI Design<br/>Space &amp; Application<br/>Product Development</p>
     </div>
-  </div>
-  <div class="closing">
-    <span>© 2026 Steadyseller</span>
-    <span class="tag">Brands made to stay.</span>
-    <span>— 12 / 12</span>
   </div>
 </section>
 
