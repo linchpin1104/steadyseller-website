@@ -341,7 +341,7 @@
   .hero-slider {
     margin-top: var(--nav-h);
     width: 100%;
-    height: clamp(360px, 55vh, 560px);
+    height: clamp(320px, 48vh, 480px);
     overflow: hidden;
     position: relative;
     background: var(--bg-2);
@@ -599,15 +599,19 @@
   .specialty-teaser .st-four {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
     gap: 0;
     padding-top: 0;
     border-top: 1px solid var(--line);
+    align-items: stretch;
   }
   .specialty-teaser .st-item {
     padding: 1.6rem 1.4rem 1.6rem 0;
     border-right: 1px solid var(--line);
     transition: background 0.3s var(--ease), padding-left 0.3s var(--ease);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
   }
   .specialty-teaser .st-item:last-child { border-right: none; }
   .specialty-teaser .st-item:hover { padding-left: 1rem; background: rgba(255,255,255,0.4); }
@@ -626,11 +630,17 @@
     color: var(--ink);
     letter-spacing: -0.012em;
     margin-bottom: 0.7rem;
+    min-height: 2.6em;
   }
   .specialty-teaser .st-item .d {
     font-size: 0.86rem;
     line-height: 1.6;
     color: var(--ink-3);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1.6em * 3);
   }
   @media (max-width: 880px) {
     .specialty-teaser .st-four { grid-template-columns: repeat(2, 1fr); }
@@ -1149,15 +1159,22 @@
   }
   .project-row {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
+    align-items: stretch;
     padding: clamp(1.5rem, 3vw, 2.5rem) 0;
     border-bottom: 1px solid var(--line-soft);
     transition: opacity 0.4s var(--ease);
   }
   .project-row:last-child { border-bottom: none; }
   .project-row:hover { opacity: 0.92; }
+  .project-row .visual-wrap { display: flex; align-items: stretch; }
+  .project-row .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+  }
   .project-row .viz { aspect-ratio: 4 / 3; }
   .project-row .img-wrap {
     width: 100%;
@@ -1174,7 +1191,6 @@
     display: block;
   }
   .project-row:hover .img-wrap img { transform: scale(1.04); }
-  .project-row.flip { grid-template-columns: 1.2fr 1fr; }
   .project-row.flip .info { order: 2; }
   .project-row.flip .visual-wrap { order: 1; }
   .project-row .info .label-row { margin-bottom: 1rem; }
@@ -1193,6 +1209,11 @@
     line-height: 1.75;
     margin-bottom: 1.4rem;
     max-width: 36ch;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1.75em * 3);
   }
 
   /* ─── Closing CTA ─── */
@@ -1459,22 +1480,22 @@
         <a href="specialty-senior.html#sp01" class="st-item">
           <div class="n">SP.01</div>
           <div class="t">머무는 공간</div>
-          <div class="d">호텔, 시니어 레지던스, 라운지.<br/>시니어가 하루의 대부분을 보내는 자리.</div>
+          <div class="d">호텔, 시니어 레지던스, 라운지. 시니어가 하루의 대부분을 보내는 자리.</div>
         </a>
         <a href="specialty-senior.html#sp02" class="st-item">
           <div class="n">SP.02</div>
           <div class="t">사용하는 물건</div>
-          <div class="d">컵, 슬리퍼, 핸드크림.<br/>매일 손에 쥐어지는 작은 물건들.</div>
+          <div class="d">컵, 슬리퍼, 핸드크림. 매일 손에 쥐어지는 작은 물건들.</div>
         </a>
         <a href="specialty-senior.html#sp03" class="st-item">
           <div class="n">SP.03</div>
           <div class="t">마주하는 식탁</div>
-          <div class="d">시니어 푸드는 자녀가<br/>부모님께 건네는 식탁이기도 합니다.</div>
+          <div class="d">시니어 푸드는 자녀가 부모님께 건네는 식탁이기도 합니다.</div>
         </a>
         <a href="specialty-senior.html#sp04" class="st-item">
           <div class="n">SP.04</div>
           <div class="t">시간을 채우는 경험</div>
-          <div class="d">은퇴 이후 시니어의 가장 큰 자원,<br/>잘 흘러가는 시간을 설계합니다.</div>
+          <div class="d">은퇴 이후 시니어의 가장 큰 자원, 잘 흘러가는 시간을 설계합니다.</div>
         </a>
       </div>
     </div>
