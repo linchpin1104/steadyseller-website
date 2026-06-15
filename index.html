@@ -33,7 +33,7 @@
       "logo": "https://steadyseller.kr/assets/og-image.jpg",
       "description": "시간이 검증한 브랜드를 만드는 브랜딩 스튜디오",
       "address": { "@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR" },
-      "email": "hello@steadyseller.kr",
+      "email": "contact@bommaum.com",
       "knowsAbout": ["브랜딩", "BI 디자인", "패키지 디자인", "공간 브랜딩", "시니어 마케팅", "시니어 브랜딩", "호스피탈리티 브랜딩", "F&B 브랜딩", "제품 개발"]
     },
     {
@@ -817,6 +817,80 @@
   }
   .home-services .hs-row:hover .a { color: var(--ink); transform: translateX(6px); }
 
+  /* Accordion variant (<details>) */
+  .home-services details.hs-row {
+    display: block;
+    padding: 0;
+    border-bottom: 1px solid var(--line);
+    border-top: none;
+    overflow: hidden;
+    transition: padding 0.4s var(--ease), background 0.4s var(--ease);
+  }
+  .home-services details.hs-row[open] { background: var(--bg); padding-bottom: 1.4rem; }
+  .home-services details.hs-row > summary {
+    display: grid;
+    grid-template-columns: 70px 1.6fr 130px 30px;
+    gap: 2rem;
+    padding: 1.7rem 0;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    transition: padding-left 0.3s var(--ease);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .home-services details.hs-row > summary::-webkit-details-marker { display: none; }
+  .home-services details.hs-row > summary::marker { display: none; }
+  .home-services details.hs-row:hover > summary { padding-left: 1rem; }
+  .home-services details.hs-row .a {
+    color: var(--ink-3);
+    font-family: var(--f-en);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-align: right;
+    transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+  }
+  .home-services details.hs-row[open] .a { color: var(--ink); transform: rotate(45deg); }
+  .home-services .hs-detail {
+    padding: 0.4rem 0 0.6rem 70px;
+    max-width: 720px;
+    margin-right: 2rem;
+    animation: hs-fade 0.4s var(--ease-out);
+  }
+  @keyframes hs-fade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .home-services .hs-detail p {
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--ink-2);
+    margin-bottom: 1rem;
+  }
+  .home-services .hs-detail-list {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 0.8rem;
+  }
+  .home-services .hs-detail-list li {
+    font-size: 0.92rem;
+    color: var(--ink-3);
+    padding: 0.4rem 0 0.4rem 1.4rem;
+    position: relative;
+  }
+  .home-services .hs-detail-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-4);
+  }
+  @media (max-width: 1024px) {
+    .home-services details.hs-row > summary { grid-template-columns: 60px 1fr auto auto; gap: 1.2rem; }
+    .home-services details.hs-row > summary .meta { display: none; }
+    .home-services .hs-detail { padding-left: 60px; }
+  }
+
   @media (max-width: 1024px) {
     .home-services .hs-head { grid-template-columns: 1fr; gap: 1.4rem; }
     .home-services .hs-row {
@@ -1256,13 +1330,9 @@
         <span class="label">Steadyseller — Branding Studio</span>
         <span class="since">Est. Seoul</span>
       </div>
-      <h1 class="t-display reveal">오래 사랑받는 브랜드를 만듭니다.</h1>
+      <h1 class="t-display reveal">오래 사랑받는<br/>브랜드를 만듭니다.</h1>
       <p class="sub reveal">자극으로 시선을 끌기보다 일상에 천천히 스며드는, 오래가는 브랜드를 만듭니다.</p>
       <p class="en" style="color:var(--ink-3); font-size:1.1rem; margin-top:0.5rem;">Brands made to stay.</p>
-      <div class="hero-marquee-caption" aria-hidden="true">
-        <span class="dot-anim"></span>
-        <span>백화점 팝업 19회 · 신세계 · 현대 · 롯데 · 갤러리아</span>
-      </div>
      </div>
     </div>
   </section>
@@ -1271,60 +1341,17 @@
   <section class="manifesto" aria-labelledby="manifesto-heading">
     <div class="col">
       <span class="label">— Manifesto · 왜</span>
-      <h2 id="manifesto-heading">시간을 견딘 것만이, 결국 브랜드가 됩니다.</h2>
+      <h2 id="manifesto-heading">시간을 견딘 것만이,<br/>결국 브랜드가 됩니다.</h2>
       <div class="body">
         <p>처음 일을 시작했을 때부터 같은 생각을 해왔습니다. <strong>좋은 브랜드는 새로움이 아니라 시간을 견디는 힘에서 나온다</strong>는 것입니다.</p>
         <p>시장은 빠르게 움직이고, 수많은 브랜드가 매일 새롭게 등장합니다. 그중 많은 것은 한두 시즌이 지나면 잊힙니다. 자극적인 감각은 빠르게 퍼지지만, 그만큼 빠르게 사라집니다.</p>
         <p>스테디셀러가 다루는 카테고리에는 공통점이 있습니다. 식탁, 침실, 가족, 일상의 손에 닿는 물건들. 사람의 가장 깊은 생활 안에 놓이는 것들입니다. 오래 사랑받는 브랜드에는 하나의 결이 있습니다. 처음 보는 강한 인상보다, 두 번째 만났을 때 자연스럽게 손이 가는 익숙함이 그 브랜드를 오래 남게 합니다.</p>
         <p>그래서 스테디셀러는 새로움을 좇기보다 결을 먼저 살핍니다. 보이는 방식, 전달되는 언어, 일상에 자리 잡는 순간까지 — 오래 남을 결을 만들기 위해 브랜드를 진정성 있게 고민합니다.</p>
       </div>
-      <div class="quote">
-        <p>좋은 브랜드는 결국 시간이 만듭니다. 스테디셀러는 그 시간이 쌓일 수 있도록, 브랜드가 처음 놓일 자리와 방향을 설계합니다.</p>
-      </div>
     </div>
   </section>
 
-  <!-- 2. HOW — Method -->
-  <section class="home-method" aria-labelledby="method-heading">
-    <div class="col-fluid">
-      <div class="hm-head">
-        <span class="label">— Method · 어떻게</span>
-        <h2 id="method-heading" class="t-h1">일을 시작할 때 묻는 네 가지 질문.</h2>
-        <p class="hm-intro">스테디셀러가 일하는 방식은 네 단계로 나뉩니다. 각 단계는 마케팅 사이언스의 검증된 모델 위에 서 있지만, 스테디셀러에게는 매 프로젝트마다 차례로 마주하는 네 개의 자리입니다.</p>
-      </div>
-
-      <div class="hm-list">
-        <a href="about-method.html#ch01" class="hm-row">
-          <span class="n">01</span>
-          <span class="t">누구의 어떤 일을 맡는가</span>
-          <span class="d">Jobs-to-be-Done · 표면의 답에서 멈추지 않는 인터뷰</span>
-          <span class="a">→</span>
-        </a>
-        <a href="about-method.html#ch02" class="hm-row">
-          <span class="n">02</span>
-          <span class="t">그 일이 떠오르는 순간은 언제인가</span>
-          <span class="d">Category Entry Point · 점유할 진입 순간 3~5개</span>
-          <span class="a">→</span>
-        </a>
-        <a href="about-method.html#ch03" class="hm-row">
-          <span class="n">03</span>
-          <span class="t">그 순간에 무엇으로 기억될 것인가</span>
-          <span class="d">Distinctive Brand Asset · 5년 후에도 지킬 자리</span>
-          <span class="a">→</span>
-        </a>
-        <a href="about-method.html#ch04" class="hm-row">
-          <span class="n">04</span>
-          <span class="t">그 기억이 손에 닿을 자리는 어디인가</span>
-          <span class="d">Physical Availability · 매대·동선·양산까지</span>
-          <span class="a">→</span>
-        </a>
-      </div>
-
-      <a href="about-method.html" class="link" style="margin-top:2.5rem;">방법론 전문 읽기 <span class="arrow">→</span></a>
-    </div>
-  </section>
-
-  <!-- 3. WHAT — Services (하는 일) -->
+  <!-- 2. WHAT — Services (하는 일) — accordion -->
   <section class="home-services" aria-labelledby="services-heading">
     <div class="col-fluid">
       <div class="hs-head">
@@ -1333,45 +1360,89 @@
         <p class="hs-intro">대부분의 프로젝트는 이 중 두세 가지가 결합된 형태로 진행됩니다.</p>
       </div>
 
-      <div class="hs-list">
-        <a href="services.html#s01" class="hs-row">
-          <span class="n">S.01</span>
-          <span class="t">Brand Strategy &amp; Identity</span>
-          <span class="d">브랜드의 이름과 자리, 시각 시스템을 결정하는 일</span>
-          <span class="meta">8 — 14 weeks</span>
-          <span class="a">→</span>
-        </a>
-        <a href="services.html#s02" class="hs-row">
-          <span class="n">S.02</span>
-          <span class="t">Brand Application</span>
-          <span class="d">패키지, 인쇄물, 디지털 자산. 톤이 손에 닿는 자리</span>
-          <span class="meta">4 — 10 weeks</span>
-          <span class="a">→</span>
-        </a>
-        <a href="services.html#s03" class="hs-row">
-          <span class="n">S.03</span>
-          <span class="t">Space &amp; Retail Experience</span>
-          <span class="d">매대, 팝업, 쇼룸. 짧은 시간 안에 압축되어 보이는 자리</span>
-          <span class="meta">6 — 12 weeks</span>
-          <span class="a">→</span>
-        </a>
-        <a href="services.html#s04" class="hs-row">
-          <span class="n">S.04</span>
-          <span class="t">Space &amp; Interiors <span class="badge">Senior</span></span>
-          <span class="d">시니어가 머무는 공간을 처음부터 함께 설계</span>
-          <span class="meta">12 — 24 weeks</span>
-          <span class="a">→</span>
-        </a>
-        <a href="services.html#s05" class="hs-row">
-          <span class="n">S.05</span>
-          <span class="t">Product Development</span>
-          <span class="d">손에 들리는 물건의 형태와 처방까지</span>
-          <span class="meta">12 — 24 weeks</span>
-          <span class="a">→</span>
-        </a>
+      <div class="hs-list" role="list">
+        <details class="hs-row">
+          <summary>
+            <span class="n">S.01</span>
+            <span class="t">Brand Strategy &amp; Identity</span>
+            <span class="meta">8 — 14 weeks</span>
+            <span class="a" aria-hidden="true">+</span>
+          </summary>
+          <div class="hs-detail">
+            <p>브랜드의 이름과 자리, 시각 시스템을 결정하는 단계. 시장과 카테고리 진단부터 네이밍, 포지셔닝, BI 설계, 가이드라인까지 — 가장 오래 가는 결정들이 이 자리에서 만들어집니다.</p>
+            <ul class="hs-detail-list">
+              <li>시장·카테고리·경쟁 진단 리포트</li>
+              <li>의뢰 정의(Job Statement) 및 포지셔닝</li>
+              <li>네이밍 · BI/CI 디자인</li>
+              <li>톤 오브 보이스 / 브랜드 가이드라인</li>
+            </ul>
+          </div>
+        </details>
+        <details class="hs-row">
+          <summary>
+            <span class="n">S.02</span>
+            <span class="t">Brand Application</span>
+            <span class="meta">4 — 10 weeks</span>
+            <span class="a" aria-hidden="true">+</span>
+          </summary>
+          <div class="hs-detail">
+            <p>가이드라인이 잡힌 톤을 패키지·인쇄물·디지털 자산에 옮기는 단계. 표면이 달라도 같은 결이 유지되도록 다듬는 일입니다.</p>
+            <ul class="hs-detail-list">
+              <li>패키지 디자인 (양산 가능 데이터까지)</li>
+              <li>인쇄물 · 사이니지 · 어메니티</li>
+              <li>웹사이트 · SNS 템플릿</li>
+            </ul>
+          </div>
+        </details>
+        <details class="hs-row">
+          <summary>
+            <span class="n">S.03</span>
+            <span class="t">Space &amp; Retail Experience</span>
+            <span class="meta">6 — 12 weeks</span>
+            <span class="a" aria-hidden="true">+</span>
+          </summary>
+          <div class="hs-detail">
+            <p>매대, 팝업, 쇼룸. 짧은 시간 안에 브랜드의 결이 압축되어 보여야 하는 자리. 시공·집기 파트너와 함께 디자인에서 매대가 서는 시점까지 가져갑니다.</p>
+            <ul class="hs-detail-list">
+              <li>백화점·편집숍 팝업 VMD</li>
+              <li>매장·쇼룸 공간 브랜딩</li>
+              <li>매대 시스템 · 행사 디렉팅</li>
+            </ul>
+          </div>
+        </details>
+        <details class="hs-row">
+          <summary>
+            <span class="n">S.04</span>
+            <span class="t">Space &amp; Interiors <span class="badge">Senior</span></span>
+            <span class="meta">12 — 24 weeks</span>
+            <span class="a" aria-hidden="true">+</span>
+          </summary>
+          <div class="hs-detail">
+            <p>시니어가 머무는 공간을 처음부터 함께 설계하는 트랙. 인테리어와 BI가 분리될 수 없는 자리에서, 공간 디테일 자체가 브랜드의 첫인상이 되도록 합니다.</p>
+            <ul class="hs-detail-list">
+              <li>시니어 친화 공간 BI 시스템</li>
+              <li>인테리어 콘셉트·재료·조명 가이드</li>
+              <li>사이니지·픽토그램 / 어메니티 큐레이션</li>
+            </ul>
+          </div>
+        </details>
+        <details class="hs-row">
+          <summary>
+            <span class="n">S.05</span>
+            <span class="t">Product Development</span>
+            <span class="meta">12 — 24 weeks</span>
+            <span class="a" aria-hidden="true">+</span>
+          </summary>
+          <div class="hs-detail">
+            <p>브랜드가 결국 손에 닿는 무엇이 되어야 한다면, 그 형태와 처방까지. 식품 카테고리에서 특히 강합니다. 협력 R&amp;D 파트너 및 제조사 풀과 함께 진행합니다.</p>
+            <ul class="hs-detail-list">
+              <li>제품 기획 / 식품 처방 협업</li>
+              <li>제조 파트너 매칭 · 양산화 컨설팅</li>
+              <li>인증·라벨 규제 대응 (고령친화우수식품 등)</li>
+            </ul>
+          </div>
+        </details>
       </div>
-
-      <a href="services.html" class="link" style="margin-top:2.5rem;">전체 서비스 자세히 보기 <span class="arrow">→</span></a>
     </div>
   </section>
 
@@ -1489,12 +1560,12 @@
   <section class="cta-block" aria-labelledby="cta-heading">
     <div class="col">
       <span class="label">— Start a Project</span>
-      <h2 id="cta-heading">새 프로젝트를 함께 시작할 생각이라면.</h2>
+      <h2 id="cta-heading">함께 오래도록 가치있는 브랜드를 만들어가고 싶습니다.</h2>
       <div class="links">
         <a href="contact.html" class="btn">프로젝트 문의 <span class="arrow">→</span></a>
         <a href="about-manifesto.html" class="btn ghost">About 자세히 보기 <span class="arrow">→</span></a>
       </div>
-      <a href="mailto:hello@steadyseller.kr" class="email">hello@steadyseller.kr</a>
+      <a href="mailto:contact@bommaum.com" class="email">contact@bommaum.com</a>
     </div>
   </section>
 
@@ -1522,15 +1593,7 @@
         <ul>
           <li>Seoul, Korea</li>
           <li>월—금 10:00—19:00</li>
-          <li><a href="mailto:hello@steadyseller.kr">hello@steadyseller.kr</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Behance</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <li><a href="mailto:contact@bommaum.com">contact@bommaum.com</a></li>
         </ul>
       </div>
     </div>
